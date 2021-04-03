@@ -330,4 +330,10 @@ body {
 .material-icons.md-48 {
   font-size: 48px;
 }
+
+.container__map {
+  min-height: 130vh;
+  background-image: url("../images/wave-bg.svg");
+  z-index: 3;
+}
 /*# sourceMappingURL=main.css.map */
