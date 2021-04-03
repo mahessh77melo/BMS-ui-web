@@ -1,0 +1,19 @@
+@import "_variables.scss";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+body {
+	background-color: $color-grey;
+}
