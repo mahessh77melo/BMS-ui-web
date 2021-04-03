@@ -1,0 +1,74 @@
+.title__features {
+	transform: rotate(-7deg) translateY(10rem);
+	font-size: 7rem;
+	padding: 2rem;
+	color: $color-3;
+}
+.container__features {
+	position: relative;
+	min-height: 100vh;
+	width: 100vw;
+}
+.illustration {
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+	&__svg {
+		height: 30rem;
+		width: auto;
+	}
+}
+.boxes {
+	display: flex;
+	padding: 2rem;
+	justify-content: space-between;
+	height: auto;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.box {
+	padding: 5rem;
+	opacity: 0.6;
+	margin: 6rem;
+	transform: rotate(7deg) skewX(-10deg);
+	box-shadow: $shadow-av;
+	background-color: $color-10;
+	border-radius: 12px;
+	width: 25rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	&__icon {
+		height: 4rem;
+		color: $color-4;
+		margin: 2rem 0;
+	}
+	&__title {
+		font-size: 2rem;
+		font-weight: 700;
+		color: $color-4;
+	}
+}
+.icon-big {
+	position: absolute;
+	top: 20%;
+	z-index: 1;
+	left: 0;
+	transform: translate(-50%, 50%) scale(8);
+	opacity: 0.05;
+}
+.material-icons.md-18 {
+	font-size: 18px;
+}
+.material-icons.md-24 {
+	font-size: 24px;
+}
+.material-icons.md-36 {
+	font-size: 36px;
+}
+.material-icons.md-48 {
+	font-size: 48px;
+}

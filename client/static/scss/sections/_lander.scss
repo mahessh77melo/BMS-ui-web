@@ -1,5 +1,6 @@
 .section__lander {
 	min-height: 100vh;
+	z-index: 2;
 }
 
 .container {
@@ -57,12 +58,15 @@
 .title {
 	font-size: 5rem;
 	font-weight: 700;
+	text-shadow: $shadow-av;
+	letter-spacing: 3px;
+	text-align: center;
+}
+.title__lander {
 	position: absolute;
 	top: 40%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	text-shadow: $shadow-av;
 	width: 40%;
-	text-align: center;
 }
