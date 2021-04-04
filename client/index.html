@@ -7,19 +7,37 @@
 			name="description"
 			content="A battery management system to analyse the characteristics of the battery in real time along with other exciting features."
 		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Compiled CSS -->
 		<link rel="stylesheet" href="./static/css/main.css" />
+		<!-- Google fonts "Lato" -->
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&display=swap"
 			rel="stylesheet"
 		/>
+		<!-- Google Material Icons -->
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
 		/>
-		<script type="text/javascript" src="./static/js/index.js" defer></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>BMS | UI</title>
+		<!-- Leaflet CSS -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+			crossorigin=""
+		/>
+		<!-- Leaflet JS -->
+		<script defer
+			src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+			crossorigin=""
+		></script>
+		<!-- JS -->
+		<script defer type="text/javascript" src="./static/js/index.js"></script>
+		<!-- Title -->
+		<title>BMS | User Interface</title>
 	</head>
 
 	<body>
@@ -69,7 +87,11 @@
 		</section>
 		<!-- Map section -->
 		<section class="section__map">
-			<div class="container__map"></div>
+			<div class="container__map">
+				<div class="title title__map">Location Tracker</div>
+				<span class="material-icons md-48 icon-big"> explore </span>
+				<div id="mapid"></div>
+			</div>
 		</section>
 	</body>
 </html>
