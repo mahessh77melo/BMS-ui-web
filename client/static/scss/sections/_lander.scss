@@ -56,17 +56,17 @@
 }
 
 .title {
-	font-size: 5rem;
+	font-size: 6rem;
 	font-weight: 700;
-	text-shadow: $shadow-av;
+	text-shadow: $shadow-light;
 	letter-spacing: 3px;
 	text-align: center;
 }
 .title__lander {
 	position: absolute;
-	top: 40%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	width: 40%;
+	width: 50%;
 }

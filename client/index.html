@@ -29,7 +29,8 @@
 			crossorigin=""
 		/>
 		<!-- Leaflet JS -->
-		<script defer
+		<script
+			defer
 			src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 			crossorigin=""
@@ -73,14 +74,28 @@
 					<div class="box">
 						<span class="material-icons md-36 box__icon"> explore </span>
 						<div class="box__title">Inbuilt Maps</div>
+						<div class="box__desc">
+							A location tracker window that uses the browser's api to deduce
+							your current location and point it out on the map with
+							considerable precision.
+						</div>
 					</div>
 					<div class="box">
-						<span class="material-icons md-36 box__icon"> settings </span>
-						<div class="box__title">All essential tools</div>
+						<span class="material-icons md-36 box__icon"> account_circle </span>
+						<div class="box__title">User Auth</div>
+						<div class="box__desc">
+							A user-friendly authentication system that uses the assistance of
+							mongoDB to store and retrieve the data to identify the users.
+						</div>
 					</div>
 					<div class="box">
 						<span class="material-icons md-36 box__icon"> leaderboard </span>
 						<div class="box__title">BMS Chart</div>
+						<div class="box__desc">
+							An interactive chart that displays the statistics of the battery
+							in a neat and clean manner that are already stored in the realtime
+							database.
+						</div>
 					</div>
 				</div>
 			</div>
@@ -92,6 +107,10 @@
 				<span class="material-icons md-48 icon-big"> explore </span>
 				<div id="mapid"></div>
 			</div>
+		</section>
+		<!-- Chart section -->
+		<section class="section__chart">
+			<div class="container__chart"></div>
 		</section>
 	</body>
 </html>

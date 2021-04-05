@@ -1,7 +1,8 @@
 .container__map {
 	padding: 10rem;
-	min-height: 100vh;
+	min-height: 1259px;
 	background-image: url("../images/wave-bg.svg");
+	background-position-x: center;
 	z-index: 3;
 	position: relative;
 }
@@ -10,9 +11,9 @@
 	color: $color-3;
 }
 #mapid {
-	height: 40rem;
+	height: 70rem;
 	border-radius: 10px;
 	border: 1rem solid $white;
-	box-shadow: $shadow-neu;
+	box-shadow: $shadow-lightest;
 	margin-top: 7rem;
 }

@@ -6,6 +6,7 @@
 }
 html {
 	font-size: 62.5%;
+	overflow-x: hidden;
 	box-sizing: border-box;
 	font-family: "Lato", sans-serif;
 	scroll-behavior: smooth;
@@ -16,4 +17,5 @@ html {
 }
 body {
 	background-color: $color-grey;
+	overflow-x: hidden;
 }

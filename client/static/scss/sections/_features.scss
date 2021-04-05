@@ -1,12 +1,11 @@
 .title__features {
-	transform: rotate(-7deg) translateY(10rem);
-	font-size: 7rem;
+	transform: rotate(-7deg) translateY(6rem);
 	padding: 2rem;
 	color: $color-3;
 }
 .container__features {
 	position: relative;
-	min-height: 90vh;
+	min-height: 100vh;
 	width: 100vw;
 }
 .illustration {
@@ -14,7 +13,7 @@
 	right: 2rem;
 	top: 2rem;
 	&__svg {
-		height: 30rem;
+		height: 25rem;
 		width: auto;
 	}
 }
@@ -23,33 +22,42 @@
 	padding: 2rem;
 	justify-content: space-between;
 	height: auto;
+	align-items: stretch;
 	position: absolute;
 	top: 60%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 .box {
-	padding: 5rem;
-	opacity: 0.65;
+	padding: 3rem;
 	margin: 6rem;
-	transform: rotate(7deg) skewX(-10deg);
-	box-shadow: $shadow-av;
-	background-color: $color-10;
 	border-radius: 12px;
 	width: 25rem;
+	background-image: linear-gradient(
+		135deg,
+		rgba(0, 0, 0, 0.1),
+		rgba(255, 255, 255, 0.25)
+	);
+	box-shadow: $shadow-neumorphic;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
 	&__icon {
 		height: 4rem;
-		color: $color-4;
-		margin: 2rem 0;
+		color: $color-2;
 	}
 	&__title {
-		font-size: 2rem;
+		margin: 2rem 0;
+		padding: 1rem;
+		font-size: 2.2rem;
 		font-weight: 700;
+		text-align: center;
+		color: $color-3;
+	}
+	&__desc {
+		font-size: 1.7rem;
 		color: $color-4;
+		text-align: center;
 	}
 }
 .icon-big {
