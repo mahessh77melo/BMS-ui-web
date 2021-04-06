@@ -183,7 +183,7 @@ body {
   border-bottom: 2px solid white;
   padding: 0.4rem 0.2rem;
   cursor: pointer;
-  margin: 0 4rem;
+  margin: 0 5rem;
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
 }
@@ -201,8 +201,8 @@ body {
   color: #4ea8de;
   border-radius: 30px;
   padding: 1rem 2.5rem;
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
@@ -364,9 +364,84 @@ body {
   margin-top: 7rem;
 }
 
-.container__chart {
+.section__chart {
   min-height: 110vh;
   margin-top: -20rem;
   background-image: linear-gradient(135deg, #4ea8de, #5e60ce);
+  margin-bottom: -15rem;
+}
+
+.container__chart {
+  padding: 25rem 0;
+  position: relative;
+}
+
+.container__chart .icon-big {
+  top: 20%;
+}
+
+.title__chart {
+  color: white;
+}
+
+canvas.chart {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 5rem;
+  margin: 10rem 15rem;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.chart__time {
+  text-align: right;
+  margin: 2rem 15rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.chart__time span {
+  font-weight: 700;
+}
+
+.section__footer {
+  background-color: #6930c3;
+  font-size: 1.6rem;
+  color: white;
+  padding: 3rem;
+}
+
+.footer__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4rem 0;
+  margin: 0 15rem;
+  font-size: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-bottom: 3px solid white;
+}
+
+.footer__link {
+  z-index: 3;
+  padding: 0.6rem;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  color: white;
+  cursor: pointer;
+}
+
+.footer__link:hover {
+  color: #7400b8;
+  background-color: white;
+}
+
+.footer__content {
+  padding: 4rem 15rem;
+  text-align: justify;
+  line-height: 2.5rem;
 }
 /*# sourceMappingURL=main.css.map */

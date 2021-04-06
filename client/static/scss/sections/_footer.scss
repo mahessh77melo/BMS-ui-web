@@ -1,0 +1,30 @@
+.section__footer {
+	background-color: $color-2;
+	font-size: 1.6rem;
+	color: $white;
+	padding: 3rem;
+}
+.footer__buttons {
+	display: flex;
+	padding: 4rem 0;
+	margin: 0 15rem;
+	font-size: 2rem;
+	justify-content: space-around;
+	border-bottom: 3px solid $white;
+}
+.footer__link {
+	z-index: 3;
+	padding: 0.6rem;
+	transition: 0.25s ease;
+	color: $white;
+	cursor: pointer;
+	&:hover {
+		color: $color-1;
+		background-color: $white;
+	}
+}
+.footer__content {
+	padding: 4rem 15rem;
+	text-align: justify;
+	line-height: 2.5rem;
+}

@@ -1,5 +1,34 @@
-.container__chart {
+.section__chart {
 	min-height: 110vh;
 	margin-top: -20rem;
 	background-image: linear-gradient(135deg, $color-5, $color-3);
+	margin-bottom: -15rem;
+}
+.container__chart {
+	padding: 25rem 0;
+	position: relative;
+	.icon-big {
+		top: 20%;
+	}
+}
+.title__chart {
+	color: $white;
+}
+canvas.chart {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 5px;
+	backdrop-filter: blur(10px);
+	padding: 5rem;
+	margin: 10rem 15rem;
+	box-shadow: $shadow-light;
+}
+
+.chart__time {
+	text-align: right;
+	margin: 2rem 15rem;
+	color: $white;
+	font-size: 2rem;
+	span {
+		font-weight: 700;
+	}
 }

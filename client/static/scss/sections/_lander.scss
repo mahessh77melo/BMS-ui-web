@@ -29,7 +29,7 @@
 		border-bottom: 2px solid $white;
 		padding: 0.4rem 0.2rem;
 		cursor: pointer;
-		margin: 0 4rem;
+		margin: 0 5rem;
 		transition: 0.3s ease-in;
 		&:hover {
 			background-color: $white;
@@ -45,7 +45,7 @@
 			color: $color-5;
 			border-radius: 30px;
 			padding: 1rem 2.5rem;
-			box-shadow: $shadow-light;
+			box-shadow: $shadow-lightest;
 			transition: 0.2s ease-in-out;
 			&:hover {
 				transform: translate(0, -4px);

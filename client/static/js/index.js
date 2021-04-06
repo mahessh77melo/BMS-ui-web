@@ -1,6 +1,4 @@
 // Leaflet map inclusion
-const lat = 10.79;
-const long = 78.7;
 
 const initMap = function () {
 	// function to display the map
@@ -34,5 +32,44 @@ const initMap = function () {
 		{ enableHighAccuracy: true }
 	);
 };
+
+// initialising the chart
+const initChart = function () {
+	const ctx = document.getElementById("myChart");
+	const myChart = new Chart(ctx, {
+		type: "bar",
+		data: {
+			labels: ["Red", "Blue", "Yellow", "Green"],
+			datasets: [
+				{
+					label: "# of Votes",
+					data: [12, 19, 3, 7],
+					backgroundColor: [
+						"rgba(255, 99, 132, 0.5)",
+						"rgba(54, 162, 235, 0.5)",
+						"rgba(255, 206, 86, 0.5)",
+						"rgba(54, 162, 150, 0.5)",
+					],
+					borderColor: [
+						"rgba(255, 99, 132, 1)",
+						"rgba(54, 162, 235, 1)",
+						"rgba(255, 206, 86, 1)",
+						"rgba(54, 162, 150, 1)",
+					],
+					borderWidth: 1,
+					borderRadius: 3,
+				},
+			],
+		},
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true,
+				},
+			},
+		},
+	});
+};
+initChart();
 // calling the function that manages the map
 initMap();

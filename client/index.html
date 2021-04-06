@@ -35,8 +35,10 @@
 			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 			crossorigin=""
 		></script>
+		<!-- Chart.js -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<!-- JS -->
-		<script defer type="text/javascript" src="./static/js/index.js"></script>
+		<script defer type="module" src="./static/js/index.js"></script>
 		<!-- Title -->
 		<title>BMS | User Interface</title>
 	</head>
@@ -110,7 +112,35 @@
 		</section>
 		<!-- Chart section -->
 		<section class="section__chart">
-			<div class="container__chart"></div>
+			<div class="container__chart">
+				<div class="title title__chart">Battery Statistics</div>
+				<span class="material-icons md-48 icon-big"> leaderboard </span>
+				<span class="parent__chart"></span>
+				<canvas class="chart" id="myChart" width="12" height="5"></canvas>
+				<div class="chart__time" id="etr">
+					Estimated time remaining : <span>40 mins</span>
+				</div>
+			</div>
 		</section>
+		<!-- Footer -->
+		<footer class="section__footer">
+			<div class="footer__buttons">
+				<div class="footer__link">Register</div>
+				<div class="footer__link">Home</div>
+			</div>
+			<div class="footer__content">
+				This website is designed and developed by Magesh. J, Final year, EEE,
+				SASTRA Deemed to be University. Design &copy; copyrights belong to the
+				same person. This is a part of the final year project done by Tharun
+				Prabhu and Magesh J from the dept. of EEE, SASTRA Deemed to be
+				University. This website is done using simple HTML, CSS (scss) and
+				JavaScript (ESnext). No major libraries are being used. Node.js for the
+				backend and MongoDB for the database. The map integration is
+				accomplished using a well-known library - Leaflet.js. The battery
+				statistics are displayed as a well organized chart with the help of an
+				open source library - Chart.js. The front-end and back-end are being
+				connected with the help of mongoose - a JS library.
+			</div>
+		</footer>
 	</body>
 </html>
