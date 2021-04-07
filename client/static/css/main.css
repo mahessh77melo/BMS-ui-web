@@ -433,45 +433,6 @@ canvas.chart {
   font-weight: 700;
 }
 
-.section__footer {
-  background-color: #6930c3;
-  font-size: 1.6rem;
-  color: white;
-  padding: 3rem;
-}
-
-.footer__buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 4rem 0;
-  margin: 0 15rem;
-  font-size: 2rem;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  border-bottom: 3px solid white;
-}
-
-.footer__link {
-  z-index: 3;
-  padding: 0.6rem;
-  -webkit-transition: 0.25s ease;
-  transition: 0.25s ease;
-  color: white;
-  cursor: pointer;
-}
-
-.footer__link:hover {
-  color: #7400b8;
-  background-color: white;
-}
-
-.footer__content {
-  padding: 4rem 15rem;
-  text-align: justify;
-  line-height: 2.5rem;
-}
-
 .section__overlay {
   display: none;
   height: 100vh;
@@ -508,7 +469,7 @@ canvas.chart {
   padding-bottom: 7rem;
   -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
           box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  border-radius: 1.5rem;
   background-image: linear-gradient(135deg, #72efdd, #5e60ce);
 }
 
@@ -604,5 +565,44 @@ canvas.chart {
   right: 0;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
+}
+
+.section__footer {
+  background-color: #6930c3;
+  font-size: 1.6rem;
+  color: white;
+  padding: 3rem;
+}
+
+.footer__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4rem 0;
+  margin: 0 15rem;
+  font-size: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-bottom: 3px solid white;
+}
+
+.footer__link {
+  z-index: 3;
+  padding: 0.6rem;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  color: white;
+  cursor: pointer;
+}
+
+.footer__link:hover {
+  color: #7400b8;
+  background-color: white;
+}
+
+.footer__content {
+  padding: 4rem 15rem;
+  text-align: justify;
+  line-height: 2.5rem;
 }
 /*# sourceMappingURL=main.css.map */
