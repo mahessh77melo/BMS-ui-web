@@ -88,7 +88,7 @@
 						</div>
 					</div>
 					<div class="box">
-						<span class="material-icons md-36 box__icon"> explore </span>
+						<span class="material-icons md-36 box__icon"> analytics </span>
 						<div class="box__title">BMS Chart</div>
 						<div class="box__desc">
 							An interactive chart that displays the statistics of the battery
@@ -152,9 +152,18 @@
 				<div class="form__header">Log In to continue</div>
 				<span class="close-button">X</span>
 				<input type="text" placeholder="Car Number" class="form__input" />
-				<input type="password" placeholder="Password" class="form__input" />
-				<button type="submit" class="btn btn-form">Submit</button>
-				<button type="reset" class="btn btn-form">Clear</button>
+				<input
+					type="password"
+					placeholder="Password"
+					class="form__input input-password"
+				/>
+				<div class="form__buttons">
+					<button type="submit" class="btn btn-form">Submit</button>
+					<button type="reset" class="btn btn-form">Clear</button>
+					<span class="material-icons md-36" id="show-password">
+						visibility
+					</span>
+				</div>
 			</form>
 		</div>
 		<!-- Register Form -->
@@ -170,14 +179,23 @@
 				<span class="close-button">X</span>
 				<input type="text" placeholder="Car Number" class="form__input" />
 				<input type="text" placeholder="Username" class="form__input" />
-				<input type="text" placeholder="Password" class="form__input" />
 				<input
 					type="password"
-					placeholder=" Confirm Password"
-					class="form__input"
+					placeholder="Password"
+					class="form__input input-password"
 				/>
-				<button type="submit" class="btn btn-form">Submit</button>
-				<button type="reset" class="btn btn-form">Clear</button>
+				<input
+					type="password"
+					placeholder="Confirm Password"
+					class="form__input input-password"
+				/>
+				<div class="form__buttons">
+					<button type="submit" class="btn btn-form">Submit</button>
+					<button type="reset" class="btn btn-form">Clear</button>
+					<span class="material-icons md-36" id="show-password">
+						visibility
+					</span>
+				</div>
 			</form>
 		</div>
 		<!-- hidden sections -->

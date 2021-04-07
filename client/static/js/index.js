@@ -103,6 +103,9 @@ const initNavigators = function () {
 };
 
 const initOverlays = function () {
+	// password eye functions
+	const passwordEyes = [...document.querySelectorAll("#show-password")];
+	passwordEyes.forEach((p) => initPasswordViewer(p));
 	// to display
 	loginBtn.addEventListener("click", () => {
 		loginOverlay.style.display = "flex";
@@ -126,6 +129,21 @@ const initOverlays = function () {
 		if (e.key == "Escape") {
 			hideBoth();
 		}
+	});
+};
+const initPasswordViewer = function (passwordEye) {
+	passwordEye.addEventListener("click", () => {
+		const passwordElements = [
+			...document.querySelectorAll(".form__input.input-password"),
+		];
+		// toggle the state
+		passwordEye.innerHTML === " visibility_off "
+			? (passwordEye.innerHTML = " visibility ")
+			: (passwordEye.innerHTML = " visibility_off ");
+		// toggle the visibilities
+		passwordElements.forEach((el) => {
+			el.type === "password" ? (el.type = "text") : (el.type = "password");
+		});
 	});
 };
 

@@ -68,6 +68,16 @@
 		font-size: 1.6rem;
 		color: $black-4;
 	}
+	&__buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	#show-password {
+		color: $black-4;
+		cursor: pointer;
+		transform: translateY(1rem);
+	}
 	.btn-form {
 		cursor: pointer;
 		font-size: 1.6rem;
