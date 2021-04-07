@@ -45,13 +45,13 @@
 
 	<body>
 		<!-- Landing section -->
-		<section class="section__lander" id="lander">
+		<section class="section__lander">
 			<div class="container">
 				<div class="nav">
 					<div class="nav__items">
-						<div class="nav__item">Features</div>
-						<div class="nav__item">Maps</div>
-						<div class="nav__item">Chart</div>
+						<div class="nav__item" id="features">Features</div>
+						<div class="nav__item" id="map">Maps</div>
+						<div class="nav__item" id="chart">Chart</div>
 					</div>
 					<div class="right">
 						<div class="btn btn-login">Log In</div>
@@ -61,7 +61,7 @@
 			</div>
 		</section>
 		<!-- Features section -->
-		<section class="section__features" id="features">
+		<section class="section__features">
 			<div class="container__features">
 				<span class="material-icons md-48 icon-big"> settings </span>
 				<div class="title title__features">Features</div>
@@ -125,8 +125,8 @@
 		<!-- Footer -->
 		<footer class="section__footer">
 			<div class="footer__buttons">
-				<div class="footer__link">Register</div>
-				<div class="footer__link">Home</div>
+				<div class="footer__link" id="register">Register</div>
+				<div class="footer__link" id="home">Home</div>
 			</div>
 			<div class="footer__content">
 				This website is designed and developed by Magesh. J, Final year, EEE,
@@ -142,5 +142,47 @@
 				connected with the help of mongoose - a JS library.
 			</div>
 		</footer>
+		<!-- hidden sections -->
+		<!-- Login form -->
+		<div class="section__overlay" id="login-overlay">
+			<span class="overlay"></span>
+			<form
+				method="POST"
+				action="/login"
+				id="login-form"
+				class="form form__login"
+			>
+				<div class="form__header">Log In to continue</div>
+				<span class="close-button">X</span>
+				<input type="text" placeholder="Car Number" class="form__input" />
+				<input type="password" placeholder="Password" class="form__input" />
+				<button type="submit" class="btn btn-form">Submit</button>
+				<button type="reset" class="btn btn-form">Clear</button>
+			</form>
+		</div>
+		<!-- Register Form -->
+		<div class="section__overlay" id="register-overlay">
+			<span class="overlay"></span>
+			<form
+				method="POST"
+				action="/register"
+				id="register-form"
+				class="form form__register"
+			>
+				<div class="form__header">Register for the best XP-rience</div>
+				<span class="close-button">X</span>
+				<input type="text" placeholder="Car Number" class="form__input" />
+				<input type="text" placeholder="Username" class="form__input" />
+				<input type="text" placeholder="Password" class="form__input" />
+				<input
+					type="password"
+					placeholder=" Confirm Password"
+					class="form__input"
+				/>
+				<button type="submit" class="btn btn-form">Submit</button>
+				<button type="reset" class="btn btn-form">Clear</button>
+			</form>
+		</div>
+		<!-- hidden sections -->
 	</body>
 </html>
