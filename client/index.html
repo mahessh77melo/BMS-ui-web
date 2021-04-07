@@ -34,17 +34,8 @@
 			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 			crossorigin=""
 		/>
-		<!-- Leaflet JS -->
-		<script
-			defer
-			src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-			crossorigin=""
-		></script>
-		<!-- Chart.js -->
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		<!-- JS -->
-		<script defer type="module" src="./static/js/index.js"></script>
+		<!-- JS file -->
+		<script src="./static/js/index.js" defer></script>
 		<!-- Title -->
 		<title>BMS | User Interface</title>
 	</head>
@@ -74,7 +65,7 @@
 				<div class="illustration">
 					<img
 						class="illustration__svg"
-						src="/static/images/illus.svg"
+						src="./static/images/illus.svg"
 						alt="Woman watching features"
 					/>
 				</div>
@@ -144,8 +135,8 @@
 				backend and MongoDB for the database. The map integration is
 				accomplished using a well-known library - Leaflet.js. The battery
 				statistics are displayed as a well organized chart with the help of an
-				open source library - Chart.js. The front-end and back-end are being
-				connected with the help of mongoose - a JS library.
+				open source library - Chart.js. The data from the mongoDB database is
+				fed to the front end using mongoose - an open source JS library.
 			</div>
 		</footer>
 		<!-- hidden sections -->

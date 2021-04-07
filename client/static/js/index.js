@@ -1,3 +1,6 @@
+// imports
+import Chart from "chart.js";
+import L from "leaflet";
 // DOM Elements
 const landerSection = document.querySelector(".section__lander");
 const featureSection = document.querySelector(".section__features");
