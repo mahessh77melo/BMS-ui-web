@@ -16,7 +16,7 @@
 	}
 }
 .form {
-	width: 35vw;
+	width: 40vw;
 	height: max-content;
 	animation: formFadeUp 0.35s cubic-bezier(0.17, 0.67, 0.59, 1.76);
 	position: relative;
@@ -24,17 +24,17 @@
 	padding: 5rem;
 	padding-bottom: 7rem;
 	box-shadow: $shadow-lightest;
-	border-radius: 1.5rem;
+	border-radius: 0.5rem;
 	background-image: $gradient-convex,
 		linear-gradient(135deg, $color-grey, $color-grey);
 	&__header {
 		font-size: 2.5rem;
-		letter-spacing: 1.5px;
+		letter-spacing: 2px;
 		background-image: linear-gradient(135deg, $color-1, $color-4);
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
-		margin: 2rem;
+		margin: 3rem;
 		font-weight: 700;
 		text-align: center;
 	}
@@ -75,9 +75,13 @@
 	}
 	&__buttons {
 		display: flex;
-		margin: 0 2rem;
 		align-items: center;
 		justify-content: space-between;
+		&--main {
+			display: flex;
+			flex: 0.5;
+			justify-content: space-between;
+		}
 	}
 	#show-password {
 		color: $black-4;
@@ -95,24 +99,27 @@
 		font-size: 1.6rem;
 		border-radius: 0.3rem;
 		padding: 1.5rem 2.5rem;
-		box-shadow: $shadow-neu-small;
+		box-shadow: $shadow-neu-small, $shadow-bevel;
 		margin-right: 2rem;
 		margin-top: 2rem;
 		transition: 0.2s ease-in-out;
+		&:not(:last-child) {
+			margin-right: 4rem;
+		}
 		&:hover {
-			box-shadow: $shadow-neu-small, $shadow-bevel;
+			box-shadow: $shadow-neu-small, $shadow-concave;
 		}
 	}
 }
 .close-button {
-	padding: 2rem 2.5rem;
+	padding: 3rem 3.5rem;
 	border-radius: 50%;
-	background-color: $white;
-	font-size: 2rem;
+	background-image: $gradient-convex, linear-gradient(to right, $white, $white);
+	font-size: 2.5rem;
 	font-weight: 700;
 	cursor: pointer;
 	color: $color-1;
-	box-shadow: $shadow-light;
+	box-shadow: $shadow-lightest;
 	position: absolute;
 	top: 0;
 	right: 0;
