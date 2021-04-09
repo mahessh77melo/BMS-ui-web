@@ -1,6 +1,6 @@
 // imports
 import { Chart } from "chart.js";
-import L from "leaflet";
+import * as L from "leaflet";
 
 // DOM Elements
 const landerSection = document.querySelector(".section__lander");
@@ -130,7 +130,7 @@ const initOverlays = function () {
 		}
 	});
 };
-const initPasswordViewer = function (passwordEye) {
+const addPasswordViewer = function (passwordEye) {
 	passwordEye.addEventListener("click", () => {
 		const passwordElements = [
 			...document.querySelectorAll(".form__input.input-password"),
