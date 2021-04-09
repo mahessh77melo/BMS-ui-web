@@ -25,10 +25,10 @@
 	padding-bottom: 7rem;
 	box-shadow: $shadow-lightest;
 	border-radius: 1.5rem;
-	background-image: linear-gradient(135deg, $color-9, $color-3);
+	background-image: linear-gradient(135deg, $tranquil-1, $tranquil-2);
 	&__header {
 		font-size: 2.5rem;
-		color: $color-2;
+		color: $black-6;
 		margin: 2rem;
 		font-weight: 700;
 		text-align: center;
@@ -45,10 +45,10 @@
 		border-radius: 5px;
 		box-shadow: $shadow-light;
 		border-bottom: 4px solid $color-1;
-		transition: all 0.2s;
+		transition: all 0.15s;
 		&:focus {
 			outline: none;
-			transform: translateX(1rem);
+			transform: scale(1.025);
 		}
 		&::-webkit-input-placeholder {
 			font-size: 2rem;
@@ -73,14 +73,14 @@
 		justify-content: space-between;
 	}
 	#show-password {
-		color: $black-4;
+		color: $black-6;
 		cursor: pointer;
 		transform: translateY(1rem);
 	}
 	.btn-form {
 		cursor: pointer;
 		font-size: 1.6rem;
-		background-color: $color-2;
+		background-color: $black-6;
 		color: $white;
 		border: none;
 		font-family: inherit;
