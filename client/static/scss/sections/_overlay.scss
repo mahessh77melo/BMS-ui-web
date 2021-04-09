@@ -25,10 +25,15 @@
 	padding-bottom: 7rem;
 	box-shadow: $shadow-lightest;
 	border-radius: 1.5rem;
-	background-image: linear-gradient(135deg, $tranquil-1, $tranquil-2);
+	background-image: $gradient-convex,
+		linear-gradient(135deg, $color-grey, $color-grey);
 	&__header {
 		font-size: 2.5rem;
-		color: $black-6;
+		letter-spacing: 1.5px;
+		background-image: linear-gradient(135deg, $color-1, $color-4);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
 		margin: 2rem;
 		font-weight: 700;
 		text-align: center;
@@ -38,21 +43,22 @@
 		font-family: inherit;
 		width: 100%;
 		color: $color-3;
+		background-color: $color-grey;
 		font-weight: 400;
 		font-size: 1.6rem;
-		margin: 1.5rem auto;
+		margin: 2rem auto;
 		border: none;
-		border-radius: 5px;
-		box-shadow: $shadow-light;
-		border-bottom: 4px solid $color-1;
-		transition: all 0.15s;
+		border-radius: 3rem;
+		box-shadow: $shadow-neu-inset;
+		// border-bottom: 4px solid $color-1;
+		transition: all 0.3s;
 		&:focus {
 			outline: none;
-			transform: scale(1.025);
+			box-shadow: $shadow-neu-inset, $shadow-purple-glow, $shadow-blue-glow;
 		}
 		&::-webkit-input-placeholder {
 			font-size: 2rem;
-			color: $black-4;
+			color: $black-6;
 		}
 		&:-moz-placeholder {
 			font-size: 2rem;
@@ -65,35 +71,36 @@
 	}
 	&__input::placeholder {
 		font-size: 1.6rem;
-		color: $black-4;
+		color: $black-6;
 	}
 	&__buttons {
 		display: flex;
+		margin: 0 2rem;
 		align-items: center;
 		justify-content: space-between;
 	}
 	#show-password {
-		color: $black-6;
+		color: $black-4;
 		cursor: pointer;
 		transform: translateY(1rem);
 	}
 	.btn-form {
 		cursor: pointer;
 		font-size: 1.6rem;
-		background-color: $black-6;
+		letter-spacing: 1.6px;
+		background-color: $color-2;
 		color: $white;
 		border: none;
 		font-family: inherit;
 		font-size: 1.6rem;
-		border-radius: 30px;
+		border-radius: 0.3rem;
 		padding: 1.5rem 2.5rem;
-		box-shadow: $shadow-light, $shadow-bevel;
+		box-shadow: $shadow-neu-small;
 		margin-right: 2rem;
 		margin-top: 2rem;
 		transition: 0.2s ease-in-out;
 		&:hover {
-			transform: translate(0, -4px);
-			box-shadow: $shadow-sticky, $shadow-bevel;
+			box-shadow: $shadow-neu-small, $shadow-bevel;
 		}
 	}
 }

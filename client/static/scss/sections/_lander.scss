@@ -41,15 +41,35 @@
 			cursor: pointer;
 			font-size: 2rem;
 			font-weight: 700;
+			position: relative;
 			background-color: $white;
 			color: $color-5;
-			border-radius: 30px;
+			border-radius: 3rem;
 			padding: 1rem 2.5rem;
 			box-shadow: $shadow-light;
-			transition: 0.2s ease-in-out;
+			transition: 0.3s ease-in-out;
+			&::after {
+				content: "";
+				display: inline-block;
+				height: 100%;
+				width: 100%;
+				background-color: $white;
+				border-radius: 3rem;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+				transition: all 0.3s;
+			}
 			&:hover {
-				transform: translate(0, -4px);
+				transform: translate(0, -3px);
 				box-shadow: $shadow-sticky;
+				&::after {
+					transition: all 0.3s;
+					content: "";
+					transform: scaleX(2) scaleY(1.5);
+					opacity: 0;
+				}
 			}
 		}
 	}
