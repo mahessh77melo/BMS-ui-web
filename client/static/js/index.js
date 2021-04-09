@@ -1,5 +1,5 @@
 // imports
-import Chart from "chart.js";
+import { Chart } from "chart.js";
 import L from "leaflet";
 
 // DOM Elements
@@ -104,7 +104,7 @@ const initNavigators = function () {
 const initOverlays = function () {
 	// password eye functions
 	const passwordEyes = [...document.querySelectorAll("#show-password")];
-	passwordEyes.forEach((p) => initPasswordViewer(p));
+	passwordEyes.forEach((p) => addPasswordViewer(p));
 	// to display
 	loginBtn.addEventListener("click", () => {
 		loginOverlay.style.display = "flex";

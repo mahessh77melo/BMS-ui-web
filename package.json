@@ -2,7 +2,7 @@
   "name": "bms-ui-web",
   "version": "1.0.0",
   "description": "Final year project web-ui",
-  "main": "index.js",
+  "default": "index.js",
   "scripts": {
     "start": "parcel ./client/index.html",
     "build": "parcel build ./client/index.html"
