@@ -108,6 +108,15 @@
 		&:hover {
 			box-shadow: $shadow-neu-small, $shadow-concave;
 		}
+		&:active {
+			transform: scale(0.95);
+			outline: none;
+			border: none;
+		}
+		&:target {
+			outline: none;
+			border: none;
+		}
 	}
 }
 .close-button {
