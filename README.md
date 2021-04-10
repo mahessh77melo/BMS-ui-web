@@ -6,10 +6,10 @@ University. **Battery Management System with cloud sharing**. Node.js for the
 backend and MongoDB for the database. 
 
 The map integration is
-accomplished using a well-known library - (Leaflet.js)[https://leafletjs.com/]. The battery
+accomplished using a well-known library - [Leaflet.js](https://leafletjs.com/). The battery
 statistics are displayed as a well organized chart with the help of an
-open source library - (Chart.js)[https://www.chartjs.org/]. The data from the mongoDB database is
-fed to the front end using (mongoose)[https://www.npmjs.com/package/mongoose] - an open source JS library.
+open source library - [Chart.js](https://www.chartjs.org/). The data from the mongoDB database is
+fed to the front end using [mongoose](https://www.npmjs.com/package/mongoose) - an open source JS library.
 
 <br>
 
