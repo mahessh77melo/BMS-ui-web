@@ -26,3 +26,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
 	res.sendFile("/dist/index.html", { root: path.resolve(__dirname, "..") });
 });
+
+// 404 page rendering
+// If none of the above is matched,  the 404 page is served.
+app.use((req, res) => {
+	res
+		.status(404)
+		.sendFile("/dist/404.html", { root: path.resolve(__dirname, "..") });
+});
