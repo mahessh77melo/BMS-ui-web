@@ -19,7 +19,7 @@ We have given our utmost attention to the minute details of this project and if 
 
 ## Steps to run this on your local machine
 
-- Clone this repo through GitHub or github's (CLI)[https://github.com/cli/cli].	
+- Clone this repo through GitHub or github's [CLI](https://github.com/cli/cli).	
 - Run `npm install` command on both the root directory and the **server** folder. The server folder is for the backend.
 - Refer the scripts to go further. 
 - `npm start` to mess with the parcel dev server.
