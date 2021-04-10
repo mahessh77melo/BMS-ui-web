@@ -5,7 +5,9 @@
   "default": "index.js",
   "scripts": {
     "start": "parcel ./client/index.html --no-cache",
-    "build": "parcel build ./client/index.html --no-cache --dist-dir ./build"
+    "dev-404":"parcel ./client/404.html --no-cache",
+    "build": "parcel build ./client/index.html --no-cache --dist-dir ./build",
+    "server": "nodemon ./server/server.js"
   },
   "author": "Magesh J",
   "license": "ISC",
