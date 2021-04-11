@@ -19,13 +19,17 @@ const initFormListeners = function () {
 	});
 };
 /**
- * Tells whether any of the given fields are empty
+ * Tells whether any of the given fields are empty. (returns false if all are non-empty)
  * @param  {...String} args
  * @returns True or False
  */
 const isFieldsEmpty = function (...args) {
 	return args.some((arg) => arg.length === 0);
 };
+/**
+ * Clears all the input elements of the given form element
+ * @param {HTMLFormElement} parentElement
+ */
 const clearAll = function (parentElement) {
 	[...parentElement.querySelectorAll(".form__input")].forEach(
 		(input) => (input.value = "")

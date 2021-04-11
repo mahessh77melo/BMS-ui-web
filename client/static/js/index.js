@@ -18,6 +18,9 @@ const loginOverlay = document.querySelector("#login-overlay");
 const registerOverlay = document.querySelector("#register-overlay");
 
 // Leaflet map inclusion
+/**
+ * Initiates the map element from the Leaflet library after retrieving the user's location through the geolocation API.
+ */
 const initMap = function () {
 	// function to display the map
 	const showMap = function ({ coords }) {
@@ -89,6 +92,9 @@ const initChart = function () {
 	});
 };
 
+/**
+ * Function to initiate the smooth scroll functionality when the nav buttons are clicked.
+ */
 const initNavigators = function () {
 	const addNavigator = function (btn, targetSection) {
 		btn.addEventListener("click", () => {
@@ -101,11 +107,16 @@ const initNavigators = function () {
 	addNavigator(homeFooterBtn, landerSection);
 };
 
-// to hide both the forms
+/**
+ * Function to hide both the overlay-forms. Sets the display property to "none"
+ */
 export const hideBoth = function () {
 	[loginOverlay, registerOverlay].forEach((o) => (o.style.display = "none"));
 };
 
+/**
+ * Initiates the event listeners for the overlay forms
+ */
 const initOverlays = function () {
 	// password eye functions
 	const passwordEyes = [...document.querySelectorAll("#show-password")];
@@ -131,6 +142,10 @@ const initOverlays = function () {
 		}
 	});
 };
+/**
+ * Adds an event listener to change the password fields as normal text fields so that the hidden text can be viewed at the user's will.
+ * @param {HTMLElement} passwordEye
+ */
 const addPasswordViewer = function (passwordEye) {
 	passwordEye.addEventListener("click", () => {
 		const passwordElements = [
@@ -147,6 +162,9 @@ const addPasswordViewer = function (passwordEye) {
 	});
 };
 
+/**
+ * Master function to call all the other functions
+ */
 const init = function () {
 	initChart();
 	initMap();
