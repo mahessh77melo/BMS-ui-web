@@ -5,13 +5,14 @@
   "default": "index.js",
   "scripts": {
     "start": "parcel ./client/index.html --no-cache",
-    "dev-404":"parcel ./client/404.html --no-cache",
+    "dev-404": "parcel ./client/404.html --no-cache",
     "build": "parcel build ./client/index.html --no-cache --dist-dir ./build",
     "server": "nodemon ./server/server.js"
   },
   "author": "Magesh J",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "chart.js": "^3.0.2",
     "core-js": "^3.10.1",
     "leaflet": "^1.7.1",

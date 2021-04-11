@@ -1,7 +1,7 @@
 // imports
 import { Chart } from "chart.js";
 import * as L from "leaflet";
-
+import "./handler";
 // DOM Elements
 const landerSection = document.querySelector(".section__lander");
 const featureSection = document.querySelector(".section__features");
@@ -101,6 +101,11 @@ const initNavigators = function () {
 	addNavigator(homeFooterBtn, landerSection);
 };
 
+// to hide both the forms
+export const hideBoth = function () {
+	[loginOverlay, registerOverlay].forEach((o) => (o.style.display = "none"));
+};
+
 const initOverlays = function () {
 	// password eye functions
 	const passwordEyes = [...document.querySelectorAll("#show-password")];
@@ -113,10 +118,6 @@ const initOverlays = function () {
 		registerOverlay.style.display = "flex";
 	});
 
-	// to hide
-	const hideBoth = function () {
-		[loginOverlay, registerOverlay].forEach((o) => (o.style.display = "none"));
-	};
 	// close button is clicked
 	const closeButtons = [...document.querySelectorAll(".close-button")];
 	closeButtons.forEach((btn) => btn.addEventListener("click", hideBoth));

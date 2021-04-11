@@ -21,12 +21,27 @@ app.use(morgan("dev"));
 
 // form submission middleware code
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // main page rendering
 app.get("/", (req, res) => {
 	res.sendFile("/dist/index.html", { root: path.resolve(__dirname, "..") });
 });
 
+// handling register
+// no need to prevent reload
+app.post("/register", (req, res) => {
+	let body = req.body;
+	console.log(body);
+	res.json(body);
+});
+// handing login
+// need to prevent reload
+app.post("/login", (req, res) => {
+	let body = req.body;
+	console.log(body);
+	res.json(body);
+});
 // 404 page rendering
 // If none of the above is matched,  the 404 page is served.
 app.use((req, res) => {
