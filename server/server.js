@@ -29,14 +29,12 @@ app.get("/", (req, res) => {
 });
 
 // handling register
-// no need to prevent reload
 app.post("/register", (req, res) => {
 	let body = req.body;
 	console.log(body);
 	res.json(body);
 });
 // handing login
-// need to prevent reload
 app.post("/login", (req, res) => {
 	let body = req.body;
 	console.log(body);

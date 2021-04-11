@@ -18,7 +18,11 @@ const initFormListeners = function () {
 		handleLogin(e);
 	});
 };
-
+/**
+ * Tells whether any of the given fields are empty
+ * @param  {...String} args
+ * @returns True or False
+ */
 const isFieldsEmpty = function (...args) {
 	return args.some((arg) => arg.length === 0);
 };
@@ -61,7 +65,7 @@ const handleRegister = async function (e) {
 		.then((res) => {
 			hideBoth();
 			showAlert(
-				`Car number ${res.data.carNumber} registered successfully with username -> ${res.data.username}`
+				`Car number ${res.data.carNumber} registered successfully with username: ${res.data.username}`
 			);
 			clearAll(RegisterForm);
 		})
@@ -96,6 +100,10 @@ const handleLogin = async function (e) {
 		});
 };
 
+/**
+ * Displays a custom alert window with the message given into it.
+ * @param {String} msg
+ */
 const showAlert = function (msg) {
 	const markup = `
 	<div class="alert">
@@ -125,4 +133,5 @@ const showAlert = function (msg) {
 	// form automatically disappears after 4 seconds
 	setTimeout(removeAlert, 4000);
 };
+// initially called
 initFormListeners();
