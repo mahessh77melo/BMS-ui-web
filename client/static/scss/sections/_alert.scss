@@ -1,0 +1,30 @@
+.alert {
+	position: fixed;
+	bottom: 10%;
+	z-index: 40;
+	left: 50%;
+	display: flex;
+	border-radius: 5px;
+	overflow: hidden;
+	justify-content: space-between;
+	transform: translateX(-50%);
+	animation: alertPopup 0.25s cubic-bezier(0.17, 0.67, 0.59, 1.76);
+	background-color: $color-grey;
+	box-shadow: $shadow-lightest;
+	font-size: 1.8rem;
+	transition: all 0.25s cubic-bezier(0.17, 0.67, 0.59, 1.76);
+	&__message {
+		color: $color-2;
+		padding: 2rem;
+		letter-spacing: 1px;
+	}
+	&__close {
+		color: $black-6;
+		padding: 2rem;
+		cursor: pointer;
+		&:hover {
+			color: $color-2;
+			background-color: $black-2;
+		}
+	}
+}

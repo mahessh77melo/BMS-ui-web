@@ -18,6 +18,15 @@ const initFormListeners = function () {
 		handleLogin(e);
 	});
 };
+
+const isFieldsEmpty = function (...args) {
+	return args.some((arg) => arg.length === 0);
+};
+const clearAll = function (parentElement) {
+	[...parentElement.querySelectorAll(".form__input")].forEach(
+		(input) => (input.value = "")
+	);
+};
 /**
  * Handles the register form submission, sends an axios post request to the own backend and if it is successful, gives a message
  * @param {*} e
@@ -35,7 +44,11 @@ const handleRegister = async function (e) {
 	).value;
 	console.log(username, password, carNumber, passwordSecond);
 	if (password !== passwordSecond) {
-		alert("Passwords don't match, Check it once  again");
+		showAlert("Passwords don't match, Check it once  again");
+		return;
+	}
+	if (isFieldsEmpty(username, password)) {
+		showAlert("Empty fields");
 		return;
 	}
 	const data = {
@@ -47,9 +60,10 @@ const handleRegister = async function (e) {
 		.post("/register", data)
 		.then((res) => {
 			hideBoth();
-			alert(
+			showAlert(
 				`Car number ${res.data.carNumber} registered successfully with username -> ${res.data.username}`
 			);
+			clearAll(RegisterForm);
 		})
 		.catch(function (error) {
 			console.log(error);
@@ -66,14 +80,49 @@ const handleLogin = async function (e) {
 		.value;
 	console.log(username, password);
 	const data = { username, password };
+	if (isFieldsEmpty(username, password)) {
+		showAlert("Empty fields");
+		return;
+	}
 	axios
 		.post("/login", data)
 		.then((res) => {
 			hideBoth();
-			alert(`Logged in as ${res.data.username}!`);
+			showAlert(`Logged in as ${res.data.username}!`);
+			clearAll(LoginForm);
 		})
 		.catch(function (error) {
 			console.log(error);
 		});
+};
+
+const showAlert = function (msg) {
+	const markup = `
+	<div class="alert">
+		<div class="alert__message">
+		${msg}
+		</div>
+		<div class="alert__close">X</div>
+	</div>
+	`;
+	const body = document.querySelector("body");
+	// inserting the alert element
+	body.insertAdjacentHTML("beforeend", markup);
+	// alert and alert elements
+	const alert = document.querySelector(".alert");
+	const closeAlert = alert.querySelector(".alert__close");
+	// function to remove the alert from the DOM
+	const removeAlert = function () {
+		alert.style.transform = "translateX(-50%) translateY(10rem)";
+		setTimeout(() => {
+			alert.style.display = "none";
+			alert.remove();
+			[...document.querySelectorAll(".alert")].forEach((al) => al.remove());
+		}, 250);
+	};
+	// alert goes away if close button is clicked
+	closeAlert.addEventListener("click", removeAlert);
+	// form automatically disappears after 4 seconds
+	setTimeout(removeAlert, 4000);
 };
 initFormListeners();
