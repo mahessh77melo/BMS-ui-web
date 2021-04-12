@@ -67,14 +67,18 @@ const handleRegister = async function (e) {
 	axios
 		.post("/register", data)
 		.then((res) => {
+			if (!res.data) {
+				showAlert("Username already registered, use a different one.");
+				return;
+			}
 			hideBoth();
 			showAlert(
 				`Car number ${res.data.carNumber} registered successfully with username: ${res.data.username}`
 			);
 			clearAll(RegisterForm);
 		})
-		.catch(function (error) {
-			console.log(error);
+		.catch((error) => {
+			showAlert(error.message);
 		});
 };
 /**
@@ -95,12 +99,21 @@ const handleLogin = async function (e) {
 	axios
 		.post("/login", data)
 		.then((res) => {
-			hideBoth();
-			showAlert(`Logged in as ${res.data.username}!`);
-			clearAll(LoginForm);
+			console.log(res);
+			if (!res.data || res.data === "") {
+				showAlert("Invalid credentials");
+				return;
+			} else {
+				hideBoth();
+				showAlert(`Logged in as ${res.data.username}!`);
+				clearAll(LoginForm);
+			}
 		})
-		.catch(function (error) {
+		.catch((error) => {
 			console.log(error);
+			showAlert(
+				"Error logging in! Try again after checking the credentials :)"
+			);
 		});
 };
 
