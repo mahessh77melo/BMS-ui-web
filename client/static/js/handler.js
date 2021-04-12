@@ -50,7 +50,6 @@ const handleRegister = async function (e) {
 	const passwordSecond = RegisterForm.querySelector(
 		'.form__input[name="passwordSecond"]'
 	).value;
-	console.log(username, password, carNumber, passwordSecond);
 	if (password !== passwordSecond) {
 		showAlert("Passwords don't match, Check it once  again");
 		return;
@@ -90,7 +89,6 @@ const handleLogin = async function (e) {
 		.value;
 	const password = LoginForm.querySelector('.form__input[name="password"]')
 		.value;
-	console.log(username, password);
 	const data = { username, password };
 	if (isFieldsEmpty(username, password)) {
 		showAlert("Empty fields");
@@ -99,7 +97,6 @@ const handleLogin = async function (e) {
 	axios
 		.post("/login", data)
 		.then((res) => {
-			console.log(res);
 			if (!res.data || res.data === "") {
 				showAlert("Invalid credentials");
 				return;

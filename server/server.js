@@ -5,6 +5,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const url = require("url");
 const User = require("./schema");
+// private file (not uploaded to github)
+const { BMS_USERS_ATLAS_URL } = require("./config");
 
 // app setup and variables
 const app = express();
@@ -14,16 +16,13 @@ const port = 3000;
 // DB connnection
 const connectDB = async () => {
 	await mongoose
-		.connect(
-			"mongodb+srv://magesh:mongo123@mycluster.rhps1.mongodb.net/bms_users?retryWrites=true&w=majority",
-			{
-				useNewUrlParser: true,
-				useUnifiedTopology: true,
-			}
-		)
+		.connect(BMS_USERS_ATLAS_URL, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		})
 		.then((res) => {
 			// Rendering the page at localhost and link for the localhost
-			console.log("connected to the database");
+			console.log("DB connected");
 			// printing every entry in the collection
 			User.find((err, res) => {
 				if (!err) {
