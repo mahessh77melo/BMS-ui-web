@@ -63,7 +63,7 @@ const initChart = function () {
 			labels: ["Red", "Blue", "Yellow", "Green"],
 			datasets: [
 				{
-					label: "# of Votes",
+					label: "Units",
 					data: [12, 19, 3, 7],
 					backgroundColor: [
 						"rgba(255, 99, 132, 0.5)",
