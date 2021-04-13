@@ -26,3 +26,4 @@ We have given our utmost attention to the minute details of this project and if 
 - `npm run server` to run my own backend server - (advisable).
 - `npm run build` to build the client side through parcel
 - All the above commands to be run from the root directory through the CLI.
+- **(after Monday April 12 commit)** The config.js file is not uploaded to github since it contains the mongo-uri. Therefore, create your own `config.js` file and export a variable called **BMS_USERS_ATLAS_URL** that contains your own mongo-uri.

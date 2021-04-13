@@ -13,7 +13,9 @@ const app = express();
 const baseDir = path.dirname(__dirname);
 const port = 3000;
 
-// DB connnection
+/**
+ * Asynchronous function that connects to the cloud mongoDB with the given mongo-uri. Prints "DB connected" to the node console if everything goes well.
+ */
 const connectDB = async () => {
 	await mongoose
 		.connect(BMS_USERS_ATLAS_URL, {
@@ -23,12 +25,6 @@ const connectDB = async () => {
 		.then((res) => {
 			// Rendering the page at localhost and link for the localhost
 			console.log("DB connected");
-			// printing every entry in the collection
-			User.find((err, res) => {
-				if (!err) {
-					console.log(res);
-				}
-			});
 		})
 		.catch((err) => console.log(err));
 };
@@ -48,6 +44,8 @@ app.use(morgan("dev"));
 
 // form submission middleware code
 app.use(express.urlencoded({ extended: true }));
+
+// middleware for handling json post requests
 app.use(express.json());
 
 // main page rendering
@@ -73,6 +71,7 @@ app.post("/register", (req, res) => {
 		}
 	});
 });
+
 // handing login
 app.post("/login", (req, res) => {
 	let body = req.body;
@@ -82,6 +81,7 @@ app.post("/login", (req, res) => {
 		}
 	});
 });
+
 // 404 page rendering
 // If none of the above is matched,  the 404 page is served.
 app.use((req, res) => {
