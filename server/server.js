@@ -58,6 +58,7 @@ app.post("/register", (req, res) => {
 	let body = req.body;
 	// checking if the user already exists
 	User.findOne({ username: body.username }, (err, result) => {
+		// proceed only if there is no result returned from findOne
 		if (!err && !result) {
 			const user = new User(body);
 			user
@@ -67,6 +68,7 @@ app.post("/register", (req, res) => {
 				})
 				.catch((err) => console.log(err));
 		} else if (result) {
+			// return null if the user already exists, further dealt in the frontend
 			res.json(null);
 		}
 	});
