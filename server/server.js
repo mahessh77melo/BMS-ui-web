@@ -4,33 +4,57 @@ const morgan = require("morgan");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const url = require("url");
-const User = require("./schema");
+const { userSchema } = require("./schema");
+const { valuesSchema } = require("./schema");
 // private file (not uploaded to github)
 const { BMS_USERS_ATLAS_URL } = require("./config");
+const { BMS_VALUES_ATLAS_URL } = require("./config");
 
 // app setup and variables
 const app = express();
 const baseDir = path.dirname(__dirname);
 const port = 3000;
 
+// creating two seperate connections
+const conn = new mongoose.Mongoose();
+const conn2 = new mongoose.Mongoose();
+
 /**
- * Asynchronous function that connects to the cloud mongoDB with the given mongo-uri. Prints "DB connected" to the node console if everything goes well.
+ * Asynchronous function that connects the instance of mongoose to the given  DB and prints "Connected to {dbName} DB".
  */
-const connectDB = async () => {
-	await mongoose
-		.connect(BMS_USERS_ATLAS_URL, {
+const establishConnection = async function (connection, urlString, dbName) {
+	await connection
+		.connect(urlString, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		})
 		.then((res) => {
-			// Rendering the page at localhost and link for the localhost
-			console.log("DB connected");
+			console.log(`Connected to ${dbName} DB`);
 		})
 		.catch((err) => console.log(err));
 };
+establishConnection(conn, BMS_USERS_ATLAS_URL, "users");
+establishConnection(conn2, BMS_VALUES_ATLAS_URL, "values");
 
-// calling the async function
-connectDB();
+/**
+ * Utility function for development purposes. Used to print all the documents in the given collection.
+ * @param {Mongoose.model} model
+ */
+const printAllDocs = function (model) {
+	model.find((err, res) => {
+		if (!err) {
+			console.log(res);
+		}
+	});
+};
+
+// stored in users database
+const User = conn.model("user", userSchema);
+// printAllDocs(User);
+
+// stored in values database
+const Value = conn2.model("All", valuesSchema, "All");
+// printAllDocs(Value);
 
 // listening to the port, starting the server
 app.listen(port);
@@ -80,6 +104,17 @@ app.post("/login", (req, res) => {
 	User.findOne(body, (err, result) => {
 		if (!err) {
 			res.json(result);
+		}
+	});
+});
+
+// handling get request for values
+app.get("/values", (req, res) => {
+	Value.findOne({ currentCharge: 72 }, (err, result) => {
+		if (!err) {
+			res.json(result);
+		} else {
+			res.json(null);
 		}
 	});
 });

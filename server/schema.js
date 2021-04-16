@@ -19,6 +19,16 @@ const userSchema = new Schema(
 	},
 	{ timestamps: true }
 );
+const valuesSchema = new Schema({
+	currentCharge: Number,
+	temprature: Number,
+	energy: Number,
+	maxcurrentenergy: Number,
+	maxdesignenergy: Number,
+	voltage: Number,
+	timetoShutdown: String,
+});
 
-const User = mongoose.model("user", userSchema);
-module.exports = User;
+// const Value = mongoose.model("all", valuesSchema);
+// const User = mongoose.model("user", userSchema);
+module.exports = { valuesSchema, userSchema };
