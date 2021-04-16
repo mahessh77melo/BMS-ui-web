@@ -1,7 +1,7 @@
 // imports
-import { Chart } from "chart.js";
 import * as L from "leaflet";
 import "./handler";
+import "./chartView";
 // DOM Elements
 const landerSection = document.querySelector(".section__lander");
 const featureSection = document.querySelector(".section__features");
@@ -52,44 +52,6 @@ const initMap = function () {
 		},
 		{ enableHighAccuracy: true }
 	);
-};
-
-// initialising the chart
-const initChart = function () {
-	const ctx = document.getElementById("myChart");
-	const myChart = new Chart(ctx, {
-		type: "bar",
-		data: {
-			labels: ["Red", "Blue", "Yellow", "Green"],
-			datasets: [
-				{
-					label: "Units",
-					data: [12, 19, 3, 7],
-					backgroundColor: [
-						"rgba(255, 99, 132, 0.5)",
-						"rgba(54, 162, 235, 0.5)",
-						"rgba(255, 206, 86, 0.5)",
-						"rgba(54, 162, 150, 0.5)",
-					],
-					borderColor: [
-						"rgba(255, 99, 132, 1)",
-						"rgba(54, 162, 235, 1)",
-						"rgba(255, 206, 86, 1)",
-						"rgba(54, 162, 150, 1)",
-					],
-					borderWidth: 1,
-					borderRadius: 3,
-				},
-			],
-		},
-		options: {
-			scales: {
-				y: {
-					beginAtZero: true,
-				},
-			},
-		},
-	});
 };
 
 /**
@@ -166,7 +128,6 @@ const addPasswordViewer = function (passwordEye) {
  * Master function to call all the other functions
  */
 const init = function () {
-	initChart();
 	initMap();
 	initNavigators();
 	initOverlays();
