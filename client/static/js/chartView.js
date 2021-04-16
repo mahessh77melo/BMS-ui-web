@@ -13,7 +13,10 @@ const retrieveData = async function () {
 		showAlert("There was an error while retrieving the values of the chart");
 	}
 };
-// initialising the chart
+/**
+ * Function that creates a new chart and inserts it into the DOM with the given values.
+ * @returns Chart
+ */
 const initChart = function () {
 	const ctx = document.getElementById("myChart");
 	const myChart = new Chart(ctx, {

@@ -1,6 +1,6 @@
 // imports
 import * as L from "leaflet";
-import "./handler";
+import "./authHandler";
 import "./chartView";
 // DOM Elements
 const landerSection = document.querySelector(".section__lander");
@@ -24,7 +24,6 @@ const registerOverlay = document.querySelector("#register-overlay");
 const initMap = function () {
 	// function to display the map
 	const showMap = function ({ coords }) {
-		console.log(coords);
 		const { latitude: lat, longitude: long } = coords;
 		const mymap = L.map("mapid").setView([lat, long], 13);
 		L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {

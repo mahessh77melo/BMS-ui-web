@@ -18,9 +18,11 @@ const port = 3000;
 // creating two seperate connections
 const conn = new mongoose.Mongoose();
 const conn2 = new mongoose.Mongoose();
-
 /**
- * Asynchronous function that connects the instance of mongoose to the given  DB and prints "Connected to {dbName} DB".
+ * Async function that establishes the connection between the given mongoose instance and the uri string. After the process is finished successfully, it prints "Connected to {dbName} DB".
+ * @param {Mongoose} connection
+ * @param {String} urlString
+ * @param {String} dbName
  */
 const establishConnection = async function (connection, urlString, dbName) {
 	await connection

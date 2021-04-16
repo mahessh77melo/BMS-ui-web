@@ -29,6 +29,4 @@ const valuesSchema = new Schema({
 	timetoShutdown: String,
 });
 
-// const Value = mongoose.model("all", valuesSchema);
-// const User = mongoose.model("user", userSchema);
 module.exports = { valuesSchema, userSchema };
