@@ -42,12 +42,12 @@
 		.btn-login {
 			cursor: pointer;
 			font-size: 2rem;
-			font-weight: 700;
+			font-weight: 400;
 			position: relative;
 			background-color: $white;
 			color: $color-5;
-			border-radius: 3rem;
-			padding: 1rem 2.5rem;
+			border-radius: 5rem;
+			padding: 1rem 3rem;
 			box-shadow: $shadow-light;
 			transition: 0.3s ease-in-out;
 			&::after {
@@ -56,7 +56,7 @@
 				height: 100%;
 				width: 100%;
 				background-color: $white;
-				border-radius: 3rem;
+				border-radius: 5rem;
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -64,8 +64,8 @@
 				transition: all 0.3s;
 			}
 			&:hover {
-				transform: translate(0, -3px);
-				box-shadow: $shadow-sticky;
+				transform: translate(0, -4px);
+				box-shadow: $shadow-lightest;
 				&::after {
 					transition: all 0.3s;
 					content: "";

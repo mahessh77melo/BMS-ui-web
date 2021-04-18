@@ -14,18 +14,37 @@
 }
 .footer__link {
 	z-index: 3;
+	letter-spacing: 1px;
 	padding: 0.6rem;
 	transition: 0.25s ease;
 	color: $white;
 	cursor: pointer;
 	&:hover {
-		color: $color-2;
-		background-color: $white;
-		transform: rotate(-7deg);
+		color: $color-10;
+		background-color: $color-2;
+		transform: rotate(-7deg) scale(1.02);
+		box-shadow: $shadow-light;
 	}
 }
 .footer__content {
 	padding: 4rem 15rem;
 	text-align: justify;
+	font-size: 1.7rem;
 	line-height: 2.5rem;
+	&--link {
+		font-weight: 700;
+		a {
+			text-decoration: none;
+			display: inline-block;
+			font-family: inherit;
+			color: $white;
+		}
+		&:hover a {
+			color: $color-10;
+			background-color: $color-2;
+			box-shadow: $shadow-light;
+			transition: all 0.1s ease-in;
+			transform: rotate(-6deg) scale(1.04);
+		}
+	}
 }
