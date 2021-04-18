@@ -3,17 +3,13 @@ const path = require("path");
 const morgan = require("morgan");
 require("dotenv").config();
 const mongoose = require("mongoose");
-const url = require("url");
 const { userSchema } = require("./schema");
 const { valuesSchema } = require("./schema");
-// private file (not uploaded to github)
-const { BMS_USERS_ATLAS_URL } = require("./config");
-const { BMS_VALUES_ATLAS_URL } = require("./config");
 
 // app setup and variables
 const app = express();
 const baseDir = path.dirname(__dirname);
-const port = 3000;
+const port = process.env.PORT;
 
 // creating two seperate connections
 const conn = new mongoose.Mongoose();
@@ -35,8 +31,8 @@ const establishConnection = async function (connection, urlString, dbName) {
 		})
 		.catch((err) => console.log(err));
 };
-establishConnection(conn, BMS_USERS_ATLAS_URL, "users");
-establishConnection(conn2, BMS_VALUES_ATLAS_URL, "values");
+establishConnection(conn, process.env.BMS_USERS_ATLAS_URL, "users");
+establishConnection(conn2, process.env.BMS_VALUES_ATLAS_URL, "values");
 
 /**
  * Utility function for development purposes. Used to print all the documents in the given collection.

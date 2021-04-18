@@ -21,11 +21,10 @@ We have given our utmost attention to the minute details of this project and if 
 
 - Clone this repo through GitHub or github's [CLI](https://github.com/cli/cli).	
 - Run `npm install` command on both the root directory and the **server** folder. The server folder is for the backend.
-- Refer the scripts to go further. 
-- `npm start` to mess with the parcel dev server.
+- `npm start` to build the dist folder with parcel bundler.
 - `npm run server` to run my own backend server - (advisable).
 - It is also necessary that you have *nodemon* installed globally.
 - If you don't, then run the following command --> `npm i -g nodemon`.
-- `npm run build` to build the client side through parcel
+- `npm run build` to build the client side through parcel (not necessary tho).
 - All the above commands to be run from the root directory through the CLI.
-- **(after Monday April 12 commit)** The config.js file is not uploaded to github since it contains the mongo-uri. Therefore, create your own `config.js` file and export a variable called **BMS_USERS_ATLAS_URL** that contains your own mongo-uri.
+- **(after Sunday - April 18 commit)** The connection strings in the `server/server.js` file are taken from the .env file that is in the root directory. Obviously, it is not supposed to be uploaded into GitHub, so **create your own .env file with appropriate variable names.**
