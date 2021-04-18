@@ -118,7 +118,7 @@ const handleLogin = async function (e) {
  * Displays a custom alert window with the message given into it.
  * @param {String} msg
  */
-const showAlert = function (msg) {
+export const showAlert = function (msg) {
 	const markup = `
 	<div class="alert">
 		<div class="alert__message">

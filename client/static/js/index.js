@@ -2,6 +2,8 @@
 import * as L from "leaflet";
 import "./authHandler";
 import "./chartView";
+import "core-js/stable";
+import "regenerator-runtime";
 // DOM Elements
 const landerSection = document.querySelector(".section__lander");
 const featureSection = document.querySelector(".section__features");

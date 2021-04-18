@@ -1,5 +1,6 @@
 import { Chart } from "chart.js";
 import axios from "axios";
+import { showAlert } from "./authHandler";
 let values = {};
 let bmsChart;
 const retrieveData = async function () {
@@ -73,5 +74,4 @@ const initChart = function () {
 	});
 	return myChart;
 };
-
-retrieveData();
+document.addEventListener("DOMContentLoaded", retrieveData);
