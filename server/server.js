@@ -3,6 +3,7 @@ const path = require("path");
 const morgan = require("morgan");
 require("dotenv").config();
 const mongoose = require("mongoose");
+const open = require("open");
 const { userSchema } = require("./schema");
 const { valuesSchema } = require("./schema");
 
@@ -57,6 +58,9 @@ const Value = conn2.model("All", valuesSchema, "All");
 // listening to the port, starting the server
 app.listen(port);
 console.log(`Rendering the page at http://localhost:${port}`);
+
+// automatically opens the page in the default browser
+open(`http://localhost:${port}`);
 
 // middleware for static files
 app.use(express.static(path.join(baseDir, "/dist")));
