@@ -8,9 +8,14 @@ const retrieveData = async function () {
 		await axios.get("/values").then((res) => {
 			console.log(res.data);
 			values = res.data;
-			bmsChart = initChart();
+			if (values) {
+				bmsChart = initChart();
+			} else {
+				showAlert("There was no data received from the backend! ;(");
+			}
 		});
 	} catch (error) {
+		console.log(error);
 		showAlert("There was an error while retrieving the values of the chart");
 	}
 };
@@ -68,6 +73,40 @@ const initChart = function () {
 			scales: {
 				y: {
 					beginAtZero: true,
+				},
+			},
+			layout: {
+				padding: 20,
+			},
+			animation: {
+				easing: "easeOutBounce",
+			},
+			font: {
+				size: 26,
+			},
+			plugins: {
+				legend: {
+					display: false,
+				},
+				tooltip: {
+					displayColors: true,
+					backgroundColor: "#c3ecec",
+					bodyColor: "#6930c3",
+					titleColor: "#7400b8",
+					titleMarginBottom: 10,
+					padding: "10",
+					titleFont: {
+						family: "Lato",
+						size: 16,
+					},
+					bodyFont: {
+						family: "Lato",
+						size: 14,
+					},
+					animation: {
+						easing: "easeInOutCirc",
+					},
+					bodyAlign: "right",
 				},
 			},
 		},
