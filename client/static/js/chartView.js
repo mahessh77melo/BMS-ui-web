@@ -25,91 +25,96 @@ const retrieveData = async function () {
  */
 const initChart = function () {
 	const ctx = document.getElementById("myChart");
+	const optionsObj = {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+		layout: {
+			padding: 20,
+		},
+		animation: {
+			easing: "easeOutBounce",
+		},
+		font: {
+			size: 26,
+		},
+		plugins: {
+			legend: {
+				display: false,
+			},
+			tooltip: {
+				displayColors: true,
+				backgroundColor: "#c3ecec",
+				bodyColor: "#6930c3",
+				titleColor: "#7400b8",
+				titleMarginBottom: 10,
+				padding: "10",
+				titleFont: {
+					family: "Lato",
+					size: 16,
+				},
+				bodyFont: {
+					family: "Lato",
+					size: 14,
+				},
+				animation: {
+					easing: "easeInOutCirc",
+				},
+				bodyAlign: "right",
+			},
+		},
+	};
+	const data = [
+		values.currentCharge,
+		values.voltage,
+		values.energy,
+		values.maxcurrentenergy,
+		values.maxdesignenergy,
+	];
+	const backgroundColor = [
+		"rgba(249, 65, 68, 0.5)",
+		"rgba(243, 114, 44, 0.5)",
+		"rgba(248, 150, 30, 0.5)",
+		"rgba(249, 199, 79, 0.5)",
+		"rgba(144, 190, 109, 0.5)",
+		"rgba(67, 170, 139, 0.5)",
+		"rgba(87, 117, 144, 0.5)",
+	];
+	const borderColor = [
+		"#f94144",
+		"#f3722c",
+		"#f8961e",
+		"#f9c74f",
+		"#90be6d",
+		"#43aa8b",
+		"#577590",
+	];
+	const labels = [
+		"Charge",
+		"Voltage",
+		"Energy",
+		"Max-Current Energy",
+		"Max-Design Energy",
+	];
+	// creating the chart object
 	const myChart = new Chart(ctx, {
 		type: "bar",
 		data: {
-			labels: [
-				"Charge",
-				"Voltage",
-				"Energy",
-				"Max-Current Energy",
-				"Max-Design Energy",
-			],
+			labels,
 			datasets: [
 				{
 					label: "Units",
-					data: [
-						values.currentCharge,
-						values.voltage,
-						values.energy,
-						values.maxcurrentenergy,
-						values.maxdesignenergy,
-					],
-					backgroundColor: [
-						"rgba(249, 65, 68, 0.5)",
-						"rgba(243, 114, 44, 0.5)",
-						"rgba(248, 150, 30, 0.5)",
-						"rgba(249, 199, 79, 0.5)",
-						"rgba(144, 190, 109, 0.5)",
-						"rgba(67, 170, 139, 0.5)",
-						"rgba(87, 117, 144, 0.5)",
-					],
-
-					borderColor: [
-						"#f94144",
-						"#f3722c",
-						"#f8961e",
-						"#f9c74f",
-						"#90be6d",
-						"#43aa8b",
-						"#577590",
-					],
+					data,
+					backgroundColor,
+					borderColor,
 					borderWidth: 1,
 					borderRadius: 3,
 				},
 			],
 		},
-		options: {
-			scales: {
-				y: {
-					beginAtZero: true,
-				},
-			},
-			layout: {
-				padding: 20,
-			},
-			animation: {
-				easing: "easeOutBounce",
-			},
-			font: {
-				size: 26,
-			},
-			plugins: {
-				legend: {
-					display: false,
-				},
-				tooltip: {
-					displayColors: true,
-					backgroundColor: "#c3ecec",
-					bodyColor: "#6930c3",
-					titleColor: "#7400b8",
-					titleMarginBottom: 10,
-					padding: "10",
-					titleFont: {
-						family: "Lato",
-						size: 16,
-					},
-					bodyFont: {
-						family: "Lato",
-						size: 14,
-					},
-					animation: {
-						easing: "easeInOutCirc",
-					},
-					bodyAlign: "right",
-				},
-			},
-		},
+		options: optionsObj,
 	});
 	return myChart;
 };
