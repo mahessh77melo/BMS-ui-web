@@ -121,6 +121,7 @@
 }
 .close-button {
 	padding: 3rem 3.5rem;
+	visibility: hidden;
 	border-radius: 50%;
 	background-image: $gradient-convex, linear-gradient(to right, $white, $white);
 	font-size: 2.5rem;
@@ -132,4 +133,7 @@
 	top: 0;
 	right: 0;
 	transform: translate(50%, -50%);
+	animation: jump-x 0.8s;
+	animation-fill-mode: forwards;
+	animation-delay: 0.5s;
 }
