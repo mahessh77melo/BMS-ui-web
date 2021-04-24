@@ -4,10 +4,12 @@
   "description": "Final year project web-ui",
   "default": "index.js",
   "scripts": {
-    "start": "parcel ./client/index.html --no-cache",
+    "dev": "parcel ./client/index.html --no-cache",
     "dev-404": "parcel ./client/404.html --no-cache",
     "build": "parcel build ./client/index.html --no-cache --dist-dir ./build",
-    "server": "nodemon ./server/server.js"
+    "start": "node ./server/server.js",
+    "server":"nodemon ./server/server.js",
+    "dev-server":"npm-run-all --parallel dev server"
   },
   "author": "Magesh J",
   "license": "ISC",

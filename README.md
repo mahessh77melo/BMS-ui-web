@@ -21,7 +21,7 @@ We have given our utmost attention to the minute details of this project and if 
 
 - Clone this repo through GitHub or github's [CLI](https://github.com/cli/cli).	
 - Run `npm install` command on both the root directory and the **server** folder. The server folder is for the backend.
-- `npm start` to build the dist folder with parcel bundler.
+- `npm run dev` to build the dist folder with parcel bundler.
 - `npm run server` to run my own backend server - (advisable).
 - It is also necessary that you have *nodemon* installed globally.
 - If you don't, then run the following command --> `npm i -g nodemon`.
