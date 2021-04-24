@@ -60,7 +60,7 @@ app.listen(port);
 console.log(`Rendering the page at http://localhost:${port}`);
 
 // automatically opens the page in the default browser
-open(`http://localhost:${port}`);
+// open(`http://localhost:${port}`);
 
 // middleware for static files
 app.use(express.static(path.join(baseDir, "/dist")));
