@@ -7,6 +7,7 @@
     "dev": "parcel ./client/index.html --no-cache",
     "dev-404": "parcel ./client/404.html --no-cache",
     "build": "parcel build ./client/index.html --no-cache --dist-dir ./build",
+    "build-404": "parcel build ./client/404.html --no-cache --dist-dir ./build",
     "start": "node ./server/server.js",
     "server":"nodemon ./server/server.js",
     "dev-server":"npm-run-all --parallel dev server"

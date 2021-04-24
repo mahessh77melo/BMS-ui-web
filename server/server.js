@@ -60,10 +60,10 @@ app.listen(port);
 console.log(`Rendering the page at http://localhost:${port}`);
 
 // automatically opens the page in the default browser
-// open(`http://localhost:${port}`);
+open(`http://localhost:${port}`);
 
 // middleware for static files
-app.use(express.static(path.join(baseDir, "/dist")));
+app.use(express.static(path.join(baseDir, "/build")));
 
 // middleware for comments on get and post requests in the console
 app.use(morgan("dev"));
@@ -76,7 +76,7 @@ app.use(express.json());
 
 // main page rendering
 app.get("/", (req, res) => {
-	res.sendFile("/dist/index.html", { root: path.resolve(__dirname, "..") });
+	res.sendFile("/build/index.html", { root: path.resolve(__dirname, "..") });
 });
 
 // handling register
@@ -126,5 +126,5 @@ app.get("/values", (req, res) => {
 app.use((req, res) => {
 	res
 		.status(404)
-		.sendFile("/dist/404.html", { root: path.resolve(__dirname, "..") });
+		.sendFile("/build/404.html", { root: path.resolve(__dirname, "..") });
 });
