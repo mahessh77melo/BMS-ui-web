@@ -23,8 +23,10 @@ We have given our utmost attention to the minute details of this project and if 
 - Run `npm install` command on both the root directory and the **server** folder. The server folder is for the backend.
 - `npm run dev` to build the dist folder with parcel bundler.
 - `npm run server` to run my own backend server - (advisable).
+- `npm start` to run the server in production mode (make sure you  have the build folder available)
 - It is also necessary that you have *nodemon* installed globally.
 - If you don't, then run the following command --> `npm i -g nodemon`.
 - `npm run build` to build the client side through parcel (not necessary tho).
 - All the above commands to be run from the root directory through the CLI.
 - **(after Sunday - April 18 commit)** The connection strings in the `server/server.js` file are taken from the .env file that is in the root directory. Obviously, it is not supposed to be uploaded into GitHub, so **create your own .env file with appropriate variable names.**
+- Also refer **package.json** file for the scripts.
