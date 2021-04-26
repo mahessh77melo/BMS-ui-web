@@ -1,8 +1,11 @@
-// import { Chart } from "chart.js";
 import axios from "axios";
 import { showAlert } from "./authHandler";
+// global variables
 let values = {};
 let bmsChart;
+/**
+ * Async function that sends a request to the own backend and stores the results in the global variable (values)
+ */
 const retrieveData = async function () {
 	try {
 		await axios.get("/values").then((res) => {
@@ -118,4 +121,5 @@ const initChart = function () {
 	});
 	return myChart;
 };
+// Start all the processes associated with the chart if and only the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", retrieveData);

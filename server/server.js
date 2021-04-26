@@ -17,7 +17,7 @@ const conn = new mongoose.Mongoose();
 const conn2 = new mongoose.Mongoose();
 /**
  * Async function that establishes the connection between the given mongoose instance and the uri string. After the process is finished successfully, it prints "Connected to {dbName} DB".
- * @param {Mongoose} connection
+ * @param {mongoose.Mongoose} connection
  * @param {String} urlString
  * @param {String} dbName
  */
@@ -37,7 +37,7 @@ establishConnection(conn2, process.env.BMS_VALUES_ATLAS_URL, "values");
 
 /**
  * Utility function for development purposes. Used to print all the documents in the given collection.
- * @param {Mongoose.model} model
+ * @param {mongoose.Model} model
  */
 const printAllDocs = function (model) {
 	model.find((err, res) => {
@@ -47,11 +47,15 @@ const printAllDocs = function (model) {
 	});
 };
 
-// stored in users database
+/**
+ * Mongoose model for Users DB
+ */
 const User = conn.model("user", userSchema);
 // printAllDocs(User);
 
-// stored in values database
+/**
+ * Mongoose model for Chart DB
+ */
 const Value = conn2.model("All", valuesSchema, "All");
 // printAllDocs(Value);
 
