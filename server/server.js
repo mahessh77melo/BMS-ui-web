@@ -9,7 +9,7 @@ const { valuesSchema } = require("./schema");
 // app setup and variables
 const app = express();
 const baseDir = path.dirname(__dirname);
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 // creating two seperate connections
 const conn = new mongoose.Mongoose();

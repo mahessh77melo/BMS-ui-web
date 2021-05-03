@@ -12,6 +12,9 @@
     "server":"nodemon ./server/server.js",
     "dev-server":"npm-run-all --parallel dev server"
   },
+  "engines":{
+    "node":"12.18.3"
+  },
   "author": "Magesh J",
   "license": "ISC",
   "dependencies": {
