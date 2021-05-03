@@ -9,11 +9,11 @@
     "build": "parcel build ./client/index.html --no-cache --dist-dir ./build",
     "build-404": "parcel build ./client/404.html --no-cache --dist-dir ./build",
     "start": "node ./server/server.js",
-    "server":"nodemon ./server/server.js",
-    "dev-server":"npm-run-all --parallel dev server"
+    "server": "nodemon ./server/server.js",
+    "dev-server": "npm-run-all --parallel dev server"
   },
-  "engines":{
-    "node":"12.18.3"
+  "engines": {
+    "node": "12.18.3"
   },
   "author": "Magesh J",
   "license": "ISC",
