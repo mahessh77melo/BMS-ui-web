@@ -5,6 +5,19 @@ import { hideBoth } from ".";
 const RegisterForm = document.querySelector("form#register-form");
 const LoginForm = document.querySelector("form#login-form");
 
+// Sections
+const chartSection = document.querySelector(".section__chart");
+const footerSection = document.querySelector(".section__footer");
+const landerSection = document.querySelector(".section__lander");
+
+// current user
+let currentUser = {
+	id: null,
+	username: null,
+	carNumber: null,
+	password: null,
+	isLoggedIn: false,
+};
 /**
  * Initiates the form listeners for the register and login overlay forms.
  */
@@ -103,15 +116,45 @@ const handleLogin = async function (e) {
 			} else {
 				hideBoth();
 				showAlert(`Logged in as ${res.data.username}!`);
+				setUser(res.data);
+				changeCSS();
 				clearAll(LoginForm);
 			}
 		})
 		.catch((error) => {
 			console.log(error);
 			showAlert(
-				"Error logging in! Try again after checking the credentials :)"
+				`Error logging in! Try again after checking the credentials :)\n${error.message}`
 			);
 		});
+};
+
+/**
+ * Changes the state of the current user
+ * @param {*} obj
+ */
+const setUser = function (obj) {
+	currentUser = {
+		id: obj._id,
+		username: obj.username,
+		password: obj.password,
+		carNumber: obj.carNumber,
+		isLoggedin: true,
+	};
+};
+
+/**
+ * Changes the CSS in the UI accordingly
+ */
+const changeCSS = function () {
+	const markup = `
+	Welcome ${currentUser.username}!
+	`;
+	landerSection.querySelector(".right").innerHTML = markup;
+	chartSection.style.display = "block";
+	footerSection.style.paddingTop = "4rem";
+	footerSection.style.marginTop = "0";
+	chartSection.scrollIntoView();
 };
 
 /**

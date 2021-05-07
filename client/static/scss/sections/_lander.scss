@@ -40,6 +40,10 @@
 		}
 	}
 	.right {
+		font-size: 2rem;
+		color: $white;
+		text-shadow: $shadow-light;
+
 		.btn-login {
 			cursor: pointer;
 			font-size: 2rem;
