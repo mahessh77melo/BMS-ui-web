@@ -7,8 +7,7 @@
     "dev": "parcel ./client/index.html --no-cache",
     "dev-404": "parcel ./client/404.html --no-cache",
     "start": "node ./server/server.js",
-    "build": "parcel build ./client/index.html --no-cache --dist-dir ./build",
-    "build-404": "parcel build ./client/404.html --no-cache --dist-dir ./build",
+    "bundle":"browserify ./build/index.6f07c23d.js -o ./build/bundle.js",
     "server": "nodemon ./server/server.js",
     "dev-server": "npm-run-all --parallel dev server"
   },
@@ -19,17 +18,18 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "browserify": "^17.0.0",
     "chart.js": "^3.0.2",
     "core-js": "^3.10.1",
-    "leaflet": "^1.7.1",
-    "material-design-icons": "^3.0.1",
-    "npm-run-all": "^4.1.5",
-    "parcel": "^2.0.0-beta.2",
-    "regenerator-runtime": "^0.13.7",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "leaflet": "^1.7.1",
+    "material-design-icons": "^3.0.1",
     "mongoose": "^5.12.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0-beta.2",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0-beta.2",

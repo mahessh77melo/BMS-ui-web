@@ -1,1 +1,243 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="A battery management system to analyse the characteristics of the battery in real time along with other exciting features."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon shortcut" href="/bms_logo.5acc6902.png" type="image/x-icon"><link rel="stylesheet" href="/index.0d0991c8.css"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><script src="/index.fc9b2e52.js" defer></script><title>BMS | User Interface</title></head><body> <section class="section__lander"> <div class="container"> <div class="nav"> <div class="nav__items"> <div class="nav__item" id="features">Features</div> <div class="nav__item" id="map">Maps</div> <div class="nav__item" id="chart">Chart</div> </div> <div class="right"> <div class="btn btn-login">Log In</div> </div> </div> <div class="title title__lander">Battery Management System</div> </div> </section> <section class="section__features"> <div class="container__features"> <span class="icon-big material-icons md-48"> settings </span> <div class="title title__features">Features</div> <div class="illustration"> <img class="illustration__svg" src="/illus.dc22de46.svg" alt="Woman watching features"> </div> <div class="boxes"> <div class="box"> <span class="box__icon material-icons md-36"> explore </span> <div class="box__title">Inbuilt Maps</div> <div class="box__desc"> A location tracker window that uses the browser's api to deduce your current location and point it out on the map with considerable precision. </div> </div> <div class="box"> <span class="box__icon material-icons md-36"> account_circle </span> <div class="box__title">User Auth</div> <div class="box__desc"> A user-friendly authentication system that uses the assistance of mongoDB to store and retrieve the data to identify the users. </div> </div> <div class="box"> <span class="box__icon material-icons md-36"> analytics </span> <div class="box__title">BMS Chart</div> <div class="box__desc"> An interactive chart that displays the statistics of the battery in a neat and clean manner that are already stored in the realtime database. </div> </div> </div> </div> </section> <section class="section__map"> <div class="container__map"> <div class="title title__map">Location Tracker</div> <span class="icon-big material-icons md-48"> explore </span> <div id="mapid"></div> </div> </section> <section class="section__chart"> <div class="container__chart"> <div class="title title__chart">Battery Statistics</div> <span class="icon-big material-icons md-48"> analytics </span> <span class="parent__chart"></span> <canvas class="chart" id="myChart" width="12" height="5"></canvas> <div class="chart__time" id="etr"> Estimated time remaining : <span>40 mins</span> </div> </div> </section> <footer class="section__footer"> <div class="footer__buttons"> <div class="footer__link" id="register">Register</div> <div class="footer__link" id="home">Home</div> </div> <div class="footer__content"> This website is designed and developed by Magesh. J, Final year, EEE, <span class="footer__content--link"> <a href="https://www.sastra.edu/" target="_blank">SASTRA Deemed to be University</a> </span>. Design &copy; copyrights belong to the same person. This is a part of the final year project done by Tharun Prabhu and Magesh J from the dept. of EEE, SASTRA Deemed to be University. This website is done using simple HTML, CSS (scss) and JavaScript (ESnext). No major libraries are being used. <span class="footer__content--link"> <a href="https://nodejs.org/en/" target="_blank"> Node.js </a> </span> for the backend and <span class="footer__content--link"> <a href="https://www.mongodb.com/" target="_blank"> MongoDB </a> </span> for the database. The map integration is accomplished using a well-known library - <span class="footer__content--link"> <a href="https://leafletjs.com/" target="_blank"> Leaflet.js </a> </span>. The battery statistics are displayed as a well organized chart with the help of an open source library - <span class="footer__content--link"> <a href="https://www.chartjs.org/" target="_blank"> Chart.js </a> </span>. The data from the mongoDB database is fed to the front end using <span class="footer__content--link"> <a href="https://mongoosejs.com/" target="_blank"> mongoose </a> </span> - an open source JS library. </div> </footer> <div class="section__overlay" id="login-overlay"> <span class="overlay"></span> <form method="POST" action="/login" id="login-form" class="form form__login" autocomplete="off"> <div class="form__header">Log In to continue</div> <span class="close-button">X</span> <input type="text" placeholder="Username" name="username" class="form__input" autocomplete="off"> <input type="password" placeholder="Password" name="password" class="form__input input-password" autocomplete="off"> <div class="form__buttons"> <div class="form__buttons--main"> <button type="submit" class="btn btn-form">Submit</button> <button type="reset" class="btn btn-form">Clear</button> </div> <span class="material-icons md-36" id="show-password"> visibility </span> </div> </form> </div> <div class="section__overlay" id="register-overlay"> <span class="overlay"></span> <form method="POST" action="/register" id="register-form" class="form form__register" autocomplete="off"> <div class="form__header">Register for the best XP-rience</div> <span class="close-button">X</span> <input type="text" placeholder="Car Number" name="carNumber" class="form__input" autocomplete="off"> <input type="text" placeholder="Username" name="username" class="form__input" autocomplete="off"> <input type="password" placeholder="Password" name="password" class="form__input input-password" autocomplete="off"> <input type="password" placeholder="Confirm Password" name="passwordSecond" class="form__input input-password" autocomplete="off"> <div class="form__buttons"> <div class="form__buttons--main"> <button type="submit" class="btn btn-form">Submit</button> <button type="reset" class="btn btn-form">Clear</button> </div> <span class="material-icons md-36" id="show-password"> visibility </span> </div> </form> </div> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="description"
+			content="A battery management system to analyse the characteristics of the battery in real time along with other exciting features."
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon shortcut"
+			href="/bms_logo.5acc6902.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="/index.31bf2484.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+			crossorigin
+		/>
+		<script
+			src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+			crossorigin
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="/bundle.js" defer></script>
+		<title>BMS | User Interface</title>
+	</head>
+	<body>
+		<section class="section__lander">
+			<div class="container">
+				<div class="nav">
+					<div class="nav__items">
+						<div class="nav__item" id="features">Features</div>
+						<div class="nav__item" id="map">Maps</div>
+						<div class="nav__item" id="chart">Chart</div>
+					</div>
+					<div class="right"><div class="btn btn-login">Log In</div></div>
+				</div>
+				<div class="title title__lander">Battery Management System</div>
+			</div>
+		</section>
+		<section class="section__features">
+			<div class="container__features">
+				<span class="icon-big material-icons md-48"> settings </span>
+				<div class="title title__features">Features</div>
+				<div class="illustration">
+					<img
+						class="illustration__svg"
+						src="/illus.dc22de46.svg"
+						alt="Woman watching features"
+					/>
+				</div>
+				<div class="boxes">
+					<div class="box">
+						<span class="box__icon material-icons md-36"> explore </span>
+						<div class="box__title">Inbuilt Maps</div>
+						<div class="box__desc">
+							A location tracker window that uses the browser's api to deduce
+							your current location and point it out on the map with
+							considerable precision.
+						</div>
+					</div>
+					<div class="box">
+						<span class="box__icon material-icons md-36"> account_circle </span>
+						<div class="box__title">User Auth</div>
+						<div class="box__desc">
+							A user-friendly authentication system that uses the assistance of
+							mongoDB to store and retrieve the data to identify the users.
+						</div>
+					</div>
+					<div class="box">
+						<span class="box__icon material-icons md-36"> analytics </span>
+						<div class="box__title">BMS Chart</div>
+						<div class="box__desc">
+							An interactive chart that displays the statistics of the battery
+							in a neat and clean manner that are already stored in the realtime
+							database.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section__map">
+			<div class="container__map">
+				<div class="title title__map">Location Tracker</div>
+				<span class="icon-big material-icons md-48"> explore </span>
+				<div id="mapid"></div>
+			</div>
+		</section>
+		<section class="section__chart">
+			<div class="container__chart">
+				<div class="title title__chart">Battery Statistics</div>
+				<span class="icon-big material-icons md-48"> analytics </span>
+				<span class="parent__chart"></span>
+				<canvas class="chart" id="myChart" width="12" height="5"></canvas>
+				<div class="chart__time" id="etr">
+					Estimated time remaining : <span>40 mins</span>
+				</div>
+			</div>
+		</section>
+		<footer class="section__footer">
+			<div class="footer__buttons">
+				<div class="footer__link" id="register">Register</div>
+				<div class="footer__link" id="home">Home</div>
+			</div>
+			<div class="footer__content">
+				This website is designed and developed by Magesh. J, Final year, EEE,
+				<span class="footer__content--link">
+					<a href="https://www.sastra.edu/" target="_blank"
+						>SASTRA Deemed to be University</a
+					> </span
+				>. Design &copy; copyrights belong to the same person. This is a part of
+				the final year project done by Tharun Prabhu and Magesh J from the dept.
+				of EEE, SASTRA Deemed to be University. This website is done using
+				simple HTML, CSS (scss) and JavaScript (ESnext). No major libraries are
+				being used.
+				<span class="footer__content--link">
+					<a href="https://nodejs.org/en/" target="_blank"> Node.js </a>
+				</span>
+				for the backend and
+				<span class="footer__content--link">
+					<a href="https://www.mongodb.com/" target="_blank"> MongoDB </a>
+				</span>
+				for the database. The map integration is accomplished using a well-known
+				library -
+				<span class="footer__content--link">
+					<a href="https://leafletjs.com/" target="_blank">
+						Leaflet.js
+					</a> </span
+				>. The battery statistics are displayed as a well organized chart with
+				the help of an open source library -
+				<span class="footer__content--link">
+					<a href="https://www.chartjs.org/" target="_blank">
+						Chart.js
+					</a> </span
+				>. The data from the mongoDB database is fed to the front end using
+				<span class="footer__content--link">
+					<a href="https://mongoosejs.com/" target="_blank"> mongoose </a>
+				</span>
+				- an open source JS library.
+			</div>
+		</footer>
+		<div class="section__overlay" id="login-overlay">
+			<span class="overlay"></span>
+			<form
+				method="POST"
+				action="/login"
+				id="login-form"
+				class="form form__login"
+				autocomplete="off"
+			>
+				<div class="form__header">Log In to continue</div>
+				<span class="close-button">X</span>
+				<input
+					type="text"
+					placeholder="Username"
+					name="username"
+					class="form__input"
+					autocomplete="off"
+				/>
+				<input
+					type="password"
+					placeholder="Password"
+					name="password"
+					class="form__input input-password"
+					autocomplete="off"
+				/>
+				<div class="form__buttons">
+					<div class="form__buttons--main">
+						<button type="submit" class="btn btn-form">Submit</button>
+						<button type="reset" class="btn btn-form">Clear</button>
+					</div>
+					<span class="material-icons md-36" id="show-password">
+						visibility
+					</span>
+				</div>
+			</form>
+		</div>
+		<div class="section__overlay" id="register-overlay">
+			<span class="overlay"></span>
+			<form
+				method="POST"
+				action="/register"
+				id="register-form"
+				class="form form__register"
+				autocomplete="off"
+			>
+				<div class="form__header">Register for the best XP-rience</div>
+				<span class="close-button">X</span>
+				<input
+					type="text"
+					placeholder="Car Number"
+					name="carNumber"
+					class="form__input"
+					autocomplete="off"
+				/>
+				<input
+					type="text"
+					placeholder="Username"
+					name="username"
+					class="form__input"
+					autocomplete="off"
+				/>
+				<input
+					type="password"
+					placeholder="Password"
+					name="password"
+					class="form__input input-password"
+					autocomplete="off"
+				/>
+				<input
+					type="password"
+					placeholder="Confirm Password"
+					name="passwordSecond"
+					class="form__input input-password"
+					autocomplete="off"
+				/>
+				<div class="form__buttons">
+					<div class="form__buttons--main">
+						<button type="submit" class="btn btn-form">Submit</button>
+						<button type="reset" class="btn btn-form">Clear</button>
+					</div>
+					<span class="material-icons md-36" id="show-password">
+						visibility
+					</span>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
