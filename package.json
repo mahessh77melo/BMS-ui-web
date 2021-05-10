@@ -8,8 +8,8 @@
     "dev-404": "parcel ./client/404.html --no-cache",
     "start": "node ./server/server.js",
     "bundle":"browserify ./build/index.686c4c97.js -o ./build/bundle.js",
-    "build": "parcel build ./client/index.html --no-cache --dist-dir ./build",
-    "build-404": "parcel build ./client/404.html --no-cache --dist-dir ./build",
+    "mybuild": "parcel build ./client/index.html --no-cache --dist-dir ./build",
+    "mybuild-404": "parcel build ./client/404.html --no-cache --dist-dir ./build",
     "server": "nodemon ./server/server.js",
     "dev-server": "npm-run-all --parallel dev server"
   },
