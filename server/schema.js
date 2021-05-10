@@ -20,13 +20,13 @@ const userSchema = new Schema(
 	{ timestamps: true }
 );
 const valuesSchema = new Schema({
-	currentCharge: Number,
-	temprature: Number,
-	energy: Number,
-	maxcurrentenergy: Number,
-	maxdesignenergy: Number,
-	voltage: Number,
-	timetoShutdown: String,
+	armatureCurrent: Number,
+	fieldCurrent: Number,
+	speed: Number,
+	torque: Number,
+	SOC: Number,
+	batteryCurrent: Number,
+	batteryVoltage: Number,
 });
 
 module.exports = { valuesSchema, userSchema };

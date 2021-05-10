@@ -55,7 +55,7 @@ const User = conn.model("user", userSchema);
 /**
  * Mongoose model for Chart DB
  */
-const Value = conn2.model("All", valuesSchema, "All");
+const Value = conn2.model("Value", valuesSchema);
 // printAllDocs(Value);
 
 // listening to the port, starting the server
@@ -112,7 +112,7 @@ app.post("/login", (req, res) => {
 
 // handling get request for values
 app.get("/values", (req, res) => {
-	Value.findOne({ currentCharge: 72 }, (err, result) => {
+	Value.find((err, result) => {
 		if (!err) {
 			res.json(result);
 		} else {

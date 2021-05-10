@@ -1,18 +1,19 @@
 import axios from "axios";
 import { showAlert } from "./authHandler";
 // global variables
-let values = {};
+let valuesArray = [];
 let bmsChart;
 /**
- * Async function that sends a request to the own backend and stores the results in the global variable (values)
+ * Async function that sends a request to the own backend and stores the results in the global variable (values). Called after the user is logged in.
  */
-const retrieveData = async function () {
+export const retrieveData = async function () {
 	try {
 		await axios.get("/values").then((res) => {
 			console.log(res.data);
-			values = res.data;
-			if (values) {
-				bmsChart = initChart();
+			valuesArray = res.data;
+			if (valuesArray.length) {
+				bmsChart = initChart(valuesArray[0]);
+				chartUpdater(bmsChart);
 			} else {
 				showAlert("There was no data received from the backend! ;(");
 			}
@@ -26,7 +27,7 @@ const retrieveData = async function () {
  * Function that creates a new chart and inserts it into the DOM with the given values.
  * @returns Chart
  */
-const initChart = function () {
+const initChart = function (values) {
 	const ctx = document.getElementById("myChart");
 	const optionsObj = {
 		scales: {
@@ -63,27 +64,28 @@ const initChart = function () {
 					size: 14,
 				},
 				animation: {
-					easing: "easeInOutCirc",
+					easing: "easeOutBounce",
 				},
 				bodyAlign: "right",
 			},
 		},
 	};
 	const data = [
-		values.currentCharge,
-		values.voltage,
-		values.energy,
-		values.maxcurrentenergy,
-		values.maxdesignenergy,
+		values.batteryCurrent,
+		values.batteryVoltage,
+		values.SOC,
+		values.speed,
+		values.torque,
+		values.armatureCurrent,
 	];
 	const backgroundColor = [
-		"rgba(249, 65, 68, 0.5)",
-		"rgba(243, 114, 44, 0.5)",
-		"rgba(248, 150, 30, 0.5)",
-		"rgba(249, 199, 79, 0.5)",
-		"rgba(144, 190, 109, 0.5)",
-		"rgba(67, 170, 139, 0.5)",
-		"rgba(87, 117, 144, 0.5)",
+		"rgba(249, 65, 68, 0.65)",
+		"rgba(243, 114, 44, 0.65)",
+		"rgba(248, 150, 30, 0.65)",
+		"rgba(249, 199, 79, 0.65)",
+		"rgba(144, 190, 109, 0.65)",
+		"rgba(67, 170, 139, 0.65)",
+		"rgba(87, 117, 144, 0.65)",
 	];
 	const borderColor = [
 		"#f94144",
@@ -95,11 +97,12 @@ const initChart = function () {
 		"#577590",
 	];
 	const labels = [
-		"Charge",
-		"Voltage",
-		"Energy",
-		"Max-Current Energy",
-		"Max-Design Energy",
+		"Battery Current",
+		"Battery Voltage",
+		"SOC",
+		"Speed",
+		"Torque",
+		"Armature Current",
 	];
 	// creating the chart object
 	const myChart = new Chart(ctx, {
@@ -121,5 +124,35 @@ const initChart = function () {
 	});
 	return myChart;
 };
-// Start all the processes associated with the chart if and only the DOM content is fully loaded
-document.addEventListener("DOMContentLoaded", retrieveData);
+
+/**
+ * Utility function to update the chart with the given values
+ * @param {ChartObject} chart
+ * @param {Object} newData
+ */
+const updateChart = function (chart, newData) {
+	chart.data.datasets[0].data = newData;
+	chart.update();
+};
+
+/**
+ * Async function that keeps updating the chart with new values every second
+ * @param {ChartObject} chart
+ */
+const chartUpdater = async function (chart) {
+	let iter = 0;
+	setInterval(() => {
+		const data = [
+			valuesArray[iter].batteryCurrent,
+			valuesArray[iter].batteryVoltage,
+			valuesArray[iter].SOC,
+			valuesArray[iter].speed,
+			valuesArray[iter].torque,
+			valuesArray[iter].armatureCurrent,
+		];
+		// update the chart every second
+		updateChart(chart, data);
+		iter = iter + 1;
+		if (iter == valuesArray.length) iter = 0;
+	}, 1000);
+};

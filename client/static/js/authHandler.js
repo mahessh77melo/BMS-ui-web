@@ -1,5 +1,6 @@
 import axios from "axios";
 import { hideBoth } from ".";
+import { retrieveData } from "./chartView";
 
 // DOM elements
 const RegisterForm = document.querySelector("form#register-form");
@@ -117,6 +118,7 @@ const handleLogin = async function (e) {
 				hideBoth();
 				showAlert(`Logged in as ${res.data.username}!`);
 				setUser(res.data);
+				retrieveData();
 				changeCSS();
 				clearAll(LoginForm);
 			}

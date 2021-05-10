@@ -13,6 +13,7 @@
 
 .nav {
 	padding: 4rem 0;
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -21,7 +22,7 @@
 		display: flex;
 		align-items: baseline;
 		justify-content: center;
-		flex: 0.85;
+		flex: 1;
 	}
 	&__item {
 		font-size: 1.6rem;
@@ -41,9 +42,11 @@
 	}
 	.right {
 		font-size: 2rem;
+		position: absolute;
+		top: 4rem;
+		right: 4rem;
 		color: $white;
 		text-shadow: $shadow-light;
-		flex: 0.15;
 
 		.btn-login {
 			cursor: pointer;
