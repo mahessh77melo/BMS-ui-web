@@ -15,8 +15,6 @@ $black-2: rgba(0, 0, 0, 0.2);
 $black-4: rgba(0, 0, 0, 0.4);
 $black-6: rgba(0, 0, 0, 0.6);
 $white: white;
-$tranquil-1: #eecda3;
-$tranquil-2: #ef629f;
 
 // SHADOWS
 $shadow-av: 0 1.2rem 2.5rem rgba(0, 0, 0, 0.4);
@@ -40,6 +38,7 @@ $shadow-neu-small: -0.4rem -0.7rem 1rem rgba(255, 255, 255, 0.7),
 	0.4rem 0.7rem 1rem rgba(0, 0, 0, 0.35);
 $shadow-neu-inset: -0.4rem -0.7rem 1rem rgba(255, 255, 255, 0.2) inset,
 	0.4rem 0.7rem 1rem rgba(0, 0, 0, 0.2) inset;
+
 // GRADIENTS
 $gradient-convex: linear-gradient(
 	-45deg,
