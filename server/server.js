@@ -12,7 +12,7 @@ const baseDir = path.dirname(__dirname);
 const port = process.env.PORT || 4000;
 
 // creating two seperate connections
-const conn = new mongoose.Mongoose();
+const conn1 = new mongoose.Mongoose();
 const conn2 = new mongoose.Mongoose();
 /**
  * Async function that establishes the connection between the given mongoose instance and the uri string. After the process is finished successfully, it prints "Connected to {dbName} DB".
@@ -31,7 +31,7 @@ const establishConnection = async function (connection, urlString, dbName) {
 		})
 		.catch((err) => console.log(err));
 };
-establishConnection(conn, process.env.BMS_USERS_ATLAS_URL, "users");
+establishConnection(conn1, process.env.BMS_USERS_ATLAS_URL, "users");
 establishConnection(conn2, process.env.BMS_VALUES_ATLAS_URL, "values");
 
 /**
@@ -49,7 +49,7 @@ const printAllDocs = function (model) {
 /**
  * Mongoose model for Users DB
  */
-const User = conn.model("user", userSchema);
+const User = conn1.model("user", userSchema);
 // printAllDocs(User);
 
 /**
